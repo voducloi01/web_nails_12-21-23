@@ -1,0 +1,71 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Hero Section
+  description: Hero Section
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+    id: hero
+    background: /images/bg-section1.png
+    title: "Currently, The Group’s conducting:"
+    content: "<li> Organic farming, livestock and dairy farming businesses: on a scale of about 632 hectares(*) in 11 locations nationwide from Hokkaido to Kyushu in Japan. </li>
+              <li> Central kitchen: 11 locations in Japan, 1 location in Hong Kong. </li>
+              <li> Home meal delivery business: provide 220 thousand cooked meal boxes delivered per day with 510 business offices. </li>
+              <li> Restaurant business: 17 brands, 500+ restaurants in Japan and 9 Asian cities. </li> "
+    image_flower: /images/ic_flower.svg
+    image_flower_alt: sushi
+    image_text: images/ic_review.svg
+    image_text_alt: sushi
+    banner: images/img_hero1.png
+    banner_alt: Sushi
+    sub_banner: images/img_hero2.png
+    sub_banner_alt: Sushi
+  
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+    id:
+      type: text
+      label: Id Section
+    background:
+      type: image
+      label: Background
+    title:
+      type: text
+      label: Title
+    content:
+      type: markdown
+      label: Content
+    image_flower:
+      type: image
+      label: Image Flower
+    image_flower_alt:
+      type: text
+      label: Image Flower Alt
+    image_text:
+      type: image
+      label: Image Text
+    image_text_alt:
+      type: text
+      label: Image Text Alt
+    banner:
+      type: image
+      label: Banner
+    banner_alt:
+      type: text
+      label: Banner Alt
+    sub_banner:
+      type: image
+      label: Sub Banner
+    sub_banner_alt:
+      type: text
+      label: Sub Banner Alt
+   
+
+
+

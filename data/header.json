@@ -1,0 +1,31 @@
+{
+  "logo": "/images/logo.png",
+  "logo_alt": "Food",
+  "icon_close": "/images/ic_close.svg",
+  "icon_menu": "/images/ic_menu.svg",
+  "icon_cart": "/images/ic_cart.svg",
+  "bg_body": "/images/bg_body.png",
+  "items": [
+    {
+      "link": "/",
+      "text": "Home"
+    },
+    {
+      "link": "/about",
+      "text": "About Us"
+    },
+    {
+      "link": "/#menu",
+      "text": "Menu"
+    },
+    {
+      "link": "/#deal",
+      "text": "Deals"
+    },
+    {
+      "link": "/#contact",
+      "text": "Contact"
+    }
+  ],
+  "_inputs": {}
+}

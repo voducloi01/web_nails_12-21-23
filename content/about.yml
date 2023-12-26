@@ -1,0 +1,128 @@
+title: About
+content_blocks:
+  - _block_name: about/home
+    id: home
+    title: About Berly
+    sub_title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Quisque sit amet molestie eros, a molestie neque. Sed ac
+      blandit nisi, eu mattis ex. Donec vitae lorem eu lectus hendrerit
+      sollicitudin tincidunt non odio. <br /><br />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Quisque sit amet molestie eros, a molestie neque. Sed ac
+      blandit nisi, eu mattis ex. Donec vitae lorem eu lectus hendrerit
+      sollicitudin tincidunt non odio. <br /><br />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Quisque sit amet molestie eros, a molestie neque. Sed ac
+      blandit nisi, eu mattis ex. Donec vitae lorem eu lectus hendrerit
+      sollicitudin tincidunt non odio. <br /><br />
+    icon_menu_board: /images/menu_board_hero.svg
+    visit_our_menu: Visit Our Menu
+    image_banner: /images/banner_hero.png
+    image_banner_alt: Food
+  - _block_name: section/combo
+    title: Combo
+    background_color: "#000"
+    background_image: /images/bg_combo.png
+    sub_title: Free x2 Cola’s cup
+    discount: -29%
+    image_cup_big: /images/img_cup.png
+    image_cup_big_alt: Food
+    image_cup_small: /images/img_cup.png
+    image_cup_small_alt: Food
+    image_banner: /images/banner_combo.png
+    image_banner_alt: Food
+    background_banner_below: "#FFF"
+  - _block_name: about/gallery
+    logo: /images/logo.png
+    logo_alt: food
+    title: Visit our gallery
+    gallery_items:
+      - title_item: Spaghetti
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Burger
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Kebab
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Burger
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Burger
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Burger
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Burger
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Burger
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Burger
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+      - title_item: Burger
+        images_item:
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+            - image: /images/gallery_item.png
+              image_alt: food
+    view_more: View more
+    reservation: Reservation
+    icon_menu_board: /images/menu_board_hero.svg

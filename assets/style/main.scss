@@ -1,0 +1,80 @@
+@use "variables";
+
+@font-face {
+  font-family: "sfPro_regular";
+  src: url("/public/font/SFProDisplay-Regular.eot");
+  src: url("/public/font/SFProDisplay-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/font/SFProDisplay-Regular.woff2") format("woff2"),
+    url("/public/font/SFProDisplay-Regular.woff") format("woff"),
+    url("/public/font/SFProDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sfPro_bold";
+  src: url("/public/font/SFProDisplay-Bold.eot");
+  src: url("/public/font/SFProDisplay-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/font/SFProDisplay-Bold.woff2") format("woff2"),
+    url("/public/font/SFProDisplay-Bold.woff") format("woff"),
+    url("/public/font/SFProDisplay-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sfPro_semibold";
+  src: url("/public/font/SFProDisplay-Semibold.eot");
+  src: url("/public/font/SFProDisplay-Semibold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/font/SFProDisplay-Semibold.woff2") format("woff2"),
+    url("/public/font/SFProDisplay-Semibold.woff") format("woff"),
+    url("/public/font/SFProDisplay-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sfPro_semibold_italic";
+  src: url("/public/font/SFProDisplay-SemiboldItalic.eot");
+  src: url("/public/font/SFProDisplay-SemiboldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/font/SFProDisplay-SemiboldItalic.woff2") format("woff2"),
+    url("/public/font/SFProDisplay-SemiboldItalic.woff") format("woff"),
+    url("/public/font/SFProDisplay-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'sfPro_light_italic';
+    src: url('/public/font/SFProDisplay-LightItalic.eot');
+    src: url('/public/font/SFProDisplay-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/public/font/SFProDisplay-LightItalic.woff2') format('woff2'),
+        url('/public/font/SFProDisplay-LightItalic.woff') format('woff'),
+        url('/public/font/SFProDisplay-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+html {
+  font-family: "sfPro_regular", sans-serif;
+  scroll-behavior: smooth;
+  font-size: 22px;
+  color: #000;
+  background: #fff;
+  line-height: normal;
+}
+@media only screen and (max-width: 1280px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
