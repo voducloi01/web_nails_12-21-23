@@ -27,6 +27,7 @@ content_blocks:
         link_menu: /menu
 
   - _block_name: section/food
+    id: food
     title: Top Food
     sub_title: Popular food
     items:
@@ -87,6 +88,7 @@ content_blocks:
     icon_plus: images/ic_plus.svg
 
   - _block_name: section/combo
+    id: combo
     title: Combo
     background_color: "#000"
     background_image: /images/bg_combo.png
@@ -101,6 +103,7 @@ content_blocks:
     background_banner_below: "#FFF"
 
   - _block_name: section/reservation
+    id: reservation
     logo: /images/logo.png
     logo_alt: food
     sub_title: Berly is preparing spaghetti for you
@@ -120,21 +123,4 @@ content_blocks:
     reservation: Reservation
     icon_menu_board: /images/menu_board_hero.svg
 
-  - _block_name: section/contact
-    logo: /images/logo.png
-    logo_alt: food
-    background_color: "rgba(0, 0, 0, 0.70)"
-    title: Contact us for advice on booking a table.
-    icon_address: /images/location.svg
-    address: 11011 Richmond Ave, Ste 900, Houston, TX 77042
-    icon_head_phone: /images/headphone.svg
-    phone_number: + 1 234 456 789
-    icon_sms: /images/sms.svg
-    text_sms: contact.berly.net
-    reservation: Reservation
-    input_name: Your Name
-    input_phone: Phone Number
-    input_message: Message
-    button_submit: Submit
-    icon_menu_board: /images/menu_board_hero.svg
-    text_map: Map
+   

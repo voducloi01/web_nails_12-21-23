@@ -20,6 +20,7 @@ content_blocks:
     image_banner: /images/banner_hero.png
     image_banner_alt: Food
   - _block_name: section/combo
+    id: combo
     title: Combo
     background_color: "#000"
     background_image: /images/bg_combo.png
@@ -33,6 +34,7 @@ content_blocks:
     image_banner_alt: Food
     background_banner_below: "#FFF"
   - _block_name: about/gallery
+    id: gallery
     logo: /images/logo.png
     logo_alt: food
     title: Visit our gallery
@@ -91,38 +93,7 @@ content_blocks:
               image_alt: food
             - image: /images/gallery_item.png
               image_alt: food
-      - title_item: Burger
-        images_item:
-            - image: /images/gallery_item.png
-              image_alt: food
-            - image: /images/gallery_item.png
-              image_alt: food
-            - image: /images/gallery_item.png
-              image_alt: food
-      - title_item: Burger
-        images_item:
-            - image: /images/gallery_item.png
-              image_alt: food
-            - image: /images/gallery_item.png
-              image_alt: food
-            - image: /images/gallery_item.png
-              image_alt: food
-      - title_item: Burger
-        images_item:
-            - image: /images/gallery_item.png
-              image_alt: food
-            - image: /images/gallery_item.png
-              image_alt: food
-            - image: /images/gallery_item.png
-              image_alt: food
-      - title_item: Burger
-        images_item:
-            - image: /images/gallery_item.png
-              image_alt: food
-            - image: /images/gallery_item.png
-              image_alt: food
-            - image: /images/gallery_item.png
-              image_alt: food
-    view_more: View more
+    view_more: See more
     reservation: Reservation
     icon_menu_board: /images/menu_board_hero.svg
+ 

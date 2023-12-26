@@ -19,21 +19,38 @@
           {{ block.title }}
         </p>
       </div>
-      <div class="mt-[60px]">
-        <swiper class="swiper__wrapper__title" :slidesPerView="'auto'" space-between="10">
-          <swiper-slide
-            v-for="(data, idx) in block.gallery_items"
-            :key="idx"
-            :class="[
-              swiperInstance?.activeIndex === idx
-                ? ' rounded-full active_item font-sfPro_semibold swiper__wrapper__title__item'
-                : ' rounded-full text-lg hover:cursor-pointer font-sfPro_semibold swiper__wrapper__title__item',
-            ]"
-            @click="swiperInstance?.slideTo(idx)"
+      <div class="mt-[60px] swiper__wrapper">
+        <div class="flex justify-center">
+          <swiper
+            :slides-per-view="'auto'"
+            space-between="20"
+            :breakpoints="{
+              '640': {
+                spaceBetween: 20,
+              },
+              '768': {
+                spaceBetween: 40,
+              },
+              '1024': {
+                spaceBetween: 60,
+              },
+            }"
+            class="swiper__wrapper__title"
           >
-            {{ data.title_item }}
-          </swiper-slide>
-        </swiper>
+            <swiper-slide
+              v-for="(data, idx) in block.gallery_items"
+              :key="idx"
+              :class="[
+                swiperInstance?.activeIndex === idx
+                  ? ' rounded-full px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] active_item font-sfPro_semibold swiper__wrapper__title__item lg:text-xl md:text-md sm:text-sm text-[14px]'
+                  : ' rounded-full lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold swiper__wrapper__title__item',
+              ]"
+              @click="swiperInstance?.slideTo(idx)"
+            >
+              {{ data.title_item }}
+            </swiper-slide>
+          </swiper>
+        </div>
         <!-- swiper grid -->
         <swiper class="w-full mt-[60px]" @swiper="onSwiper">
           <swiper-slide v-for="(data, idx) in block.gallery_items" :key="idx">
@@ -56,7 +73,7 @@
         </swiper>
       </div>
       <!-- view more -->
-      <div class="flex justify-between mt-[79px]">
+      <div class="flex justify-between mt-[79px] items-center gap-2 sm:gap-0">
         <button
           class="bg-black rounded-full text-white py-[5px] px-[41px] sm:py-[15px] font-sfPro_semibold text-md sm:text-xl"
         >
@@ -68,7 +85,7 @@
             class="flex gap-[12px] bg-main rounded-full px-[19px] py-[5px] sm:px-[41px] sm:py-[15px] text-white font-sfPro_semibold text-md sm:text-xl"
           >
             <button>{{ block.reservation }}</button>
-            <p class="w-[30px]">
+            <p class="w-[24px] sm:w-[30px] aspect-[1/1]">
               <img class="image" :src="block.icon_menu_board" />
             </p>
           </div>
@@ -98,7 +115,7 @@ defineProps<Props>();
     width: auto !important;
   }
 }
-.swiper__wrapper__title :deep(.swiper-wrapper) {
+.swiper__wrapper .swiper__wrapper__title :deep(.swiper-slide) {
   display: flex;
   align-items: center;
 }
@@ -106,8 +123,7 @@ defineProps<Props>();
 .active_item {
   background-color: #000;
   color: #fff;
-  padding: 12px 70px;
-  font-size: 20px;
+
   &:hover {
     cursor: pointer;
   }
