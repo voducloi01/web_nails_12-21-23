@@ -1,22 +1,146 @@
 <!-- eslint-disable vue/html-self-closing -->
 <template>
   <footer :style="{ backgroundColor: footerData.background }">
-    <div class="container py-[50px]">
+    <div class="container pt-[53px]">
+      <div class="grid md:grid-cols-2">
+        <div
+          class="pr-0 sm:pr-[43px] text-[#fff] flex flex-col justify-start gap-[20px] items-center sm:items-start"
+        >
+          <div class="w-[29px] h-[30px] sm:w-[80px] sm:h-[83.5px]">
+            <img
+              class="image"
+              :src="footerData.logo"
+              :alt="footerData.logo_alt"
+            />
+          </div>
+          <p class="text-[12px] sm:text-sm md:text-md lg:text-[22px] sm:text-left text-center">
+            {{ footerData.title }}
+          </p>
+          <!-- ------------- -->
+          <div class="sm:flex hidden flex-col gap-[14px]">
+            <div class="flex gap-[16px] items-center justify-start">
+              <p class="w-[40px] aspect-[1/1]">
+                <img class="image" :src="footerData.icon_head_phone" />
+              </p>
+              <p class="text-lg">
+                {{ footerData.phone_number }}
+              </p>
+            </div>
+            <div class="flex gap-[16px] items-center justify-start">
+              <p class="w-[40px] aspect-[1/1]">
+                <img class="image" :src="footerData.icon_address" />
+              </p>
+              <p class="text-lg">
+                {{ footerData.address }}
+              </p>
+            </div>
+            <div class="flex gap-[16px] items-center justify-start">
+              <p class="w-[40px] aspect-[1/1]">
+                <img class="image" :src="footerData.icon_sms" />
+              </p>
+              <p class="text-lg">
+                {{ footerData.text_sms }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- form info -->
+        <div class="sm:block hidden mt-[30px] md:mt-0">
+          <h2
+            class="pb-[8px] text-[32px] font-sfPro_semibold text-[#fff] border-b-4 border-b-main inline-footerData pr-[30px]"
+          >
+            {{ footerData.reservation }}
+          </h2>
+          <form class="flex flex-col gap-[20px] mt-[30px]">
+            <input
+              v-model="inputName"
+              :class="[
+                inputName
+                  ? 'rounded-full font-sfPro_semibold outline-none w-full text-white'
+                  : 'outline-none rounded-full w-full  text-white ',
+              ]"
+              :style="{
+                backgroundColor: inputName ? '#00000073' : '#00000033',
+                padding: '18px 0 18px 38px',
+              }"
+              :placeholder="footerData.input_name"
+            />
+            <input
+              v-model="inputPhone"
+              type="number"
+              :class="[
+                inputPhone
+                  ? 'rounded-full font-sfPro_semibold outline-none w-full text-white'
+                  : 'outline-none rounded-full w-full  text-white ',
+              ]"
+              :style="{
+                backgroundColor: inputPhone ? '#00000073' : '#00000033',
+                padding: '18px 0 18px 38px',
+              }"
+              :placeholder="footerData.input_phone"
+            />
+            <input
+              v-model="inputMessage"
+              :class="[
+                inputMessage
+                  ? 'rounded-full font-sfPro_semibold outline-none w-full text-white'
+                  : 'outline-none rounded-full w-full  text-white ',
+              ]"
+              :style="{
+                backgroundColor: inputMessage ? '#00000073' : '#00000033',
+                padding: '18px 0 18px 38px',
+              }"
+              :placeholder="footerData.input_message"
+            />
+            <div
+              class="flex gap-[12px] items-center justify-center rounded-full bg-main py-[15px]"
+            >
+              <button
+                type="submit"
+                class="font-sfPro_semibold text-xl text-white"
+              >
+                {{ footerData.button_submit }}
+              </button>
+              <p class="w-[30px] aspect-[1/1]">
+                <img class="image" :src="footerData.icon_menu_board" />
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- map -->
+      <div class="mt-[40px]">
+        <p
+          class="sm:block hidden text-[32px] font-sfPro_semibold text-[#fff] pr-[137px] pb-[8px] border-b-4 border-b-main inline-footerData"
+        >
+          {{ footerData.text_map }}
+        </p>
+        <p
+          class="aspect-[350/177] sm:aspect-[1280/600] md:aspect-[1280/400] lg:aspect-[1280/224] mt-[30px] border-b-2 border-b-white pb-[18px]"
+        >
+          <iframe
+            class="image rounded-[20px]"
+            :src="footerData.google_map"
+          ></iframe>
+        </p>
+      </div>
       <div
-        class="flex justify-between items-center flex-col-reverse gap-3 sm:gap-0 sm:flex-row"
+        class="flex justify-between items-center flex-col-reverse sm:gap-0 sm:flex-row sm:py-[50px] gap-[16.5px] pt-[16.5px] pb-[40px]"
       >
-        <p class="text-[#FFF] text-center">
+        <p
+          class="text-[#FFF] text-center lg:text-[22px] md:text-md sm:text-sm text-[14px]"
+        >
           {{ footerData.info_company }}
         </p>
         <div class="flex gap-[20px] items-center justify-center">
-          <p>
-            <img :src="footerData.ic_facebook" />
+          <p class="w-[20px] aspect-[1/1] md:w-[40px]">
+            <img :src="footerData.ic_facebook" class="image" />
           </p>
-          <p>
-            <img :src="footerData.ic_google" />
+          <p class="w-[20px] aspect-[1/1] md:w-[40px]">
+            <img :src="footerData.ic_google" class="image" />
           </p>
-          <p>
-            <img :src="footerData.ic_instagram" />
+          <p class="w-[20px] aspect-[1/1] md:w-[40px]">
+            <img :src="footerData.ic_instagram" class="image" />
           </p>
         </div>
       </div>
@@ -25,7 +149,10 @@
 </template>
 
 <script setup lang="ts">
-import footerData from '@/data/footer.json';
+import footerData from "@/data/footer.json";
+const inputName = ref("");
+const inputPhone = ref("");
+const inputMessage = ref("");
 </script>
 
 <style lang="scss"></style>

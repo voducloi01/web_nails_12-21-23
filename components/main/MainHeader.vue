@@ -56,7 +56,7 @@
             @click="showMenu = !showMenu"
           >
             <img
-              class="h-full w-full object-cover"
+              class="h-full w-full object-cover hover:cursor-pointer"
               :src="headerData.icon_menu"
             />
           </div>
@@ -80,7 +80,7 @@
         <div class="pb-[96px] pt-[34px]">
           <div class="h-[40px] w-[41px]">
             <img
-              class="h-full w-full object-cover"
+              class="h-full w-full object-cover hover:cursor-pointer"
               :src="headerData.logo"
               :alt="headerData.logo_alt"
             />
@@ -91,7 +91,7 @@
           :key="index"
           class="px-[20px] py-[15px] text-center hover:text-red relative"
         >
-          <NuxtLink :to="header.link">
+          <NuxtLink :to="header.link" @click="showMenu = !showMenu">
             {{ header.text }}
           </NuxtLink>
           <!-- check active -->
@@ -108,7 +108,7 @@
           </div>
           <div class="aspect-[1/1]">
             <img
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover hover:cursor-pointer"
               :src="headerData.icon_cart"
             />
           </div>

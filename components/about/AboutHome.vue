@@ -11,7 +11,7 @@
         <div class="sm:block hidden sm:pr-[10px] md:pr-[60px] lg:pr-[74px]">
           <div class="ml-[-134px] aspect-[1/1]">
             <img
-              class="image rounded-full"
+              class="image rounded-full shadow-2md"
               :src="block.image_banner"
               :alt="block.image_banner_alt"
             />

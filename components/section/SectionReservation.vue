@@ -52,7 +52,7 @@ eslint-disable vue/html-self-closing
         <swiper-slide
           v-for="(data, idx) in block.reservation_items"
           :key="idx"
-          class="wrapper_slider_item"
+          class="wrapper_slider_item hover:cursor-pointer"
         >
           <div class="w-[200px] aspect-[200/124]">
             <img
