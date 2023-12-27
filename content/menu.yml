@@ -137,3 +137,17 @@ content_blocks:
     text_order: Your  Order 
     icon_cart: /images/ic_cart_food.svg
     icon_menu_board: /images/menu_board_hero.svg
+  - _block_name: section/combo
+    id: combo
+    title: Combo
+    background_color: "#000"
+    background_image: /images/bg_combo.png
+    sub_title: Free x2 Cola’s cup
+    discount: -29%
+    image_cup_big: /images/img_cup.png
+    image_cup_big_alt: Food
+    image_cup_small: /images/img_cup.png
+    image_cup_small_alt: Food
+    image_banner: /images/banner_combo.png
+    image_banner_alt: Food
+    background_banner_below: "#FFF"
