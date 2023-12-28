@@ -13,7 +13,9 @@
               :alt="footerData.logo_alt"
             />
           </div>
-          <p class="text-[12px] sm:text-sm md:text-md lg:text-[22px] sm:text-left text-center">
+          <p
+            class="text-[12px] sm:text-sm md:text-md lg:text-[22px] sm:text-left text-center"
+          >
             {{ footerData.title }}
           </p>
           <!-- ------------- -->
@@ -53,41 +55,41 @@
           </h2>
           <form class="flex flex-col gap-[20px] mt-[30px]">
             <input
-              v-model="inputName"
+              v-model="input.name"
               :class="[
-                inputName
+                input.name
                   ? 'rounded-full font-sfPro_semibold outline-none w-full text-white'
                   : 'outline-none rounded-full w-full  text-white ',
               ]"
               :style="{
-                backgroundColor: inputName ? '#00000073' : '#00000033',
+                backgroundColor: input.name ? '#00000073' : '#00000033',
                 padding: '18px 0 18px 38px',
               }"
               :placeholder="footerData.input_name"
             />
             <input
-              v-model="inputPhone"
+              v-model="input.phone"
               type="number"
               :class="[
-                inputPhone
+                input.phone
                   ? 'rounded-full font-sfPro_semibold outline-none w-full text-white'
                   : 'outline-none rounded-full w-full  text-white ',
               ]"
               :style="{
-                backgroundColor: inputPhone ? '#00000073' : '#00000033',
+                backgroundColor: input.phone ? '#00000073' : '#00000033',
                 padding: '18px 0 18px 38px',
               }"
               :placeholder="footerData.input_phone"
             />
             <input
-              v-model="inputMessage"
+              v-model="input.mess"
               :class="[
-                inputMessage
+                input.mess
                   ? 'rounded-full font-sfPro_semibold outline-none w-full text-white'
                   : 'outline-none rounded-full w-full  text-white ',
               ]"
               :style="{
-                backgroundColor: inputMessage ? '#00000073' : '#00000033',
+                backgroundColor: input.mess ? '#00000073' : '#00000033',
                 padding: '18px 0 18px 38px',
               }"
               :placeholder="footerData.input_message"
@@ -149,10 +151,19 @@
 </template>
 
 <script setup lang="ts">
-import footerData from "@/data/footer.json";
-const inputName = ref("");
-const inputPhone = ref("");
-const inputMessage = ref("");
+import footerData from '@/data/footer.json';
+const input = reactive({
+  name: '',
+  phone: '',
+  mess: ''
+});
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+</style>

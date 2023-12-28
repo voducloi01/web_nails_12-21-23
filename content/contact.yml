@@ -1,0 +1,44 @@
+title: Contact
+content_blocks:
+  - _block_name: contact/home
+    id: home
+    title: Contact
+    sub_title: Contact us for support and reservations
+    open_time: Operating time
+    time_items:
+      - day: Mon- fri
+        time: 9am - 20pm
+      - day: Sat- Sun
+        time: 9am - 22pm
+    info_items:
+      - icon: /images/headphone.svg
+        content: + 1 234 456 789
+      - icon: /images/location.svg
+        content: 11011 Richmond Ave, Ste 900, Houston, TX 77042
+      - icon: /images/sms_bold.svg
+        content: contact.berly.net
+
+  - _block_name: contact/reservation
+    id: reservation
+    title: Reservation
+    input_name: Your Name
+    input_phone: Phone Number
+    input_message: Message
+    icon_menu_board: /images/menu_board_hero.svg
+    btn_reservation: Reservation
+    background: 'rgba(0, 0, 0, 0.70)'
+
+  - _block_name: section/combo
+    id: combo
+    title: Combo
+    background_color: '#000'
+    background_image: /images/bg_combo.png
+    sub_title: Free x2 Cola’s cup
+    discount: -29%
+    image_cup_big: /images/img_cup.png
+    image_cup_big_alt: Food
+    image_cup_small: /images/img_cup.png
+    image_cup_small_alt: Food
+    image_banner: /images/banner_combo.png
+    image_banner_alt: Food
+    background_banner_below: '#FFF'

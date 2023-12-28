@@ -6,9 +6,11 @@
         class="tab_bar_wrapper py-[20px] 2xl:py-[68px] grid grid-cols-3 2xl:grid-cols-[290px_1fr] justify-items-center items-center"
       >
         <div class="2xl:pr-[210px]">
-          <div class="h-[30px] w-[30px] hover:cursor-pointer">
+          <div
+            class="h-[30px] w-[30px] sm:w-[80px] sm:h-[83px] hover:cursor-pointer"
+          >
             <img
-              class="h-full w-full object-cover"
+              class="image"
               :src="headerData.logo"
               :alt="headerData.logo_alt"
             />
@@ -21,7 +23,7 @@
             <li
               v-for="(data, idx) in headerData.items"
               :key="idx"
-              class="font-sfPro_bold text-xl p-[20px] hover:cursor-pointer relative"
+              class="font-sfPro_bold text-xl p-[20px] hover:cursor-pointer relative wrapper_nav"
             >
               <NuxtLink :to="data.link">
                 {{ data.text }}
@@ -30,6 +32,9 @@
               <div
                 v-if="router.fullPath === data.link"
                 class="active absolute bottom-1 left-[50%] -translate-x-[50%]"
+              />
+              <div
+                class="absolute bottom-1 left-[50%] -translate-x-[50%] wrapper_nav_item"
               />
             </li>
           </ul>
@@ -89,7 +94,7 @@
         <div
           v-for="(header, index) of headerData.items"
           :key="index"
-          class="px-[20px] py-[15px] text-center hover:text-red relative"
+          class="px-[20px] py-[15px] text-center hover:text-red relative wrapper_nav"
         >
           <NuxtLink :to="header.link" @click="showMenu = !showMenu">
             {{ header.text }}
@@ -98,6 +103,10 @@
           <div
             v-if="router.fullPath === header.link"
             class="active absolute bottom-1 left-[50%] -translate-x-[50%]"
+          />
+
+          <div
+            class="absolute bottom-1 left-[50%] -translate-x-[50%] wrapper_nav_item"
           />
         </div>
         <div class="hover:cursor-pointer relative">
@@ -119,22 +128,22 @@
 </template>
 
 <script setup lang="ts">
-import headerData from "@/data/header.json";
+import headerData from '@/data/header.json';
 
 const showMenu = ref(false);
 
 const router = useRoute();
 
 onMounted(() => {
-  const header = document.querySelector(".header");
-  const tabBar = document.querySelector(".tab_bar_wrapper");
-  window?.addEventListener("scroll", function () {
+  const header = document.querySelector('.header');
+  const tabBar = document.querySelector('.tab_bar_wrapper');
+  window?.addEventListener('scroll', function () {
     if (window.scrollY > 0) {
-      header?.classList.add("bg-[#fff]");
-      tabBar?.classList.remove("2xl:py-[68px]");
+      header?.classList.add('bg-[#fff]');
+      tabBar?.classList.remove('2xl:py-[68px]');
     } else {
-      header?.classList.remove("bg-[#fff]");
-      tabBar?.classList.add("2xl:py-[68px]");
+      header?.classList.remove('bg-[#fff]');
+      tabBar?.classList.add('2xl:py-[68px]');
     }
   });
 });
@@ -149,5 +158,14 @@ const showPage = computed(() => {
   height: 4px;
   width: 100%;
   background-color: var(--color-main);
+}
+.wrapper_nav {
+  &:hover {
+    .wrapper_nav_item {
+      height: 4px;
+      width: 100%;
+      background-color: var(--color-main);
+    }
+  }
 }
 </style>
