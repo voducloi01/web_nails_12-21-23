@@ -4,7 +4,7 @@
     <div class="container pt-[53px]">
       <div class="grid md:grid-cols-2">
         <div
-          class="pr-0 sm:pr-[43px] text-[#fff] flex flex-col justify-start gap-[20px] items-center sm:items-start"
+          class="pr-0 sm:pr-[43px] text-white flex flex-col justify-start gap-[20px] items-center sm:items-start"
         >
           <div class="w-[29px] h-[30px] sm:w-[80px] sm:h-[83.5px]">
             <img
@@ -49,7 +49,7 @@
         <!-- form info -->
         <div class="sm:block hidden mt-[30px] md:mt-0">
           <h2
-            class="pb-[8px] text-[32px] font-sfPro_semibold text-[#fff] border-b-4 border-b-main inline-footerData pr-[30px]"
+            class="pb-[8px] text-[32px] font-sfPro_semibold text-white border-b-4 border-b-main inline-footerData pr-[30px]"
           >
             {{ footerData.reservation }}
           </h2>
@@ -113,7 +113,7 @@
       <!-- map -->
       <div class="mt-[40px]">
         <p
-          class="sm:block hidden text-[32px] font-sfPro_semibold text-[#fff] pr-[137px] pb-[8px] border-b-4 border-b-main inline-footerData"
+          class="sm:block hidden text-[32px] font-sfPro_semibold text-white pr-[137px] pb-[8px] border-b-4 border-b-main inline-footerData"
         >
           {{ footerData.text_map }}
         </p>
@@ -130,7 +130,7 @@
         class="flex justify-between items-center flex-col-reverse sm:gap-0 sm:flex-row sm:py-[50px] gap-[16.5px] pt-[16.5px] pb-[40px]"
       >
         <p
-          class="text-[#FFF] text-center lg:text-[22px] md:text-md sm:text-sm text-[14px]"
+          class="text-white text-center lg:text-[22px] md:text-md sm:text-sm text-[14px]"
         >
           {{ footerData.info_company }}
         </p>

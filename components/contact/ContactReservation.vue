@@ -10,7 +10,7 @@
       <div class="sm:hidden block md:mt-0">
         <div class="flex items-center justify-center">
           <h2
-            class="text-center pb-[8px] text-xl font-sfPro_semibold text-[#fff] border-b-4 border-b-main inline-block"
+            class="text-center pb-[8px] text-xl font-sfPro_semibold text-white border-b-4 border-b-main inline-block"
           >
             {{ block.title }}
           </h2>

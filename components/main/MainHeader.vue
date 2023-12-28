@@ -71,7 +71,7 @@
       <!-- show menu -->
       <div
         v-if="showMenu"
-        class="2xl:hidden top-0 h-screen w-full absolute flex flex-col gap-[30px] items-center justify-start bg-[#fff] right-[50%] translate-x-[50%]"
+        class="2xl:hidden top-0 h-screen w-full absolute flex flex-col gap-[30px] items-center justify-start bg-white right-[50%] translate-x-[50%]"
       >
         <div class="flex justify-end w-full hover:cursor-pointer p-2">
           <div class="w-[30px] h-[30px]">
@@ -139,10 +139,10 @@ onMounted(() => {
   const tabBar = document.querySelector('.tab_bar_wrapper');
   window?.addEventListener('scroll', function () {
     if (window.scrollY > 0) {
-      header?.classList.add('bg-[#fff]');
+      header?.classList.add('bg-white');
       tabBar?.classList.remove('2xl:py-[68px]');
     } else {
-      header?.classList.remove('bg-[#fff]');
+      header?.classList.remove('bg-white');
       tabBar?.classList.add('2xl:py-[68px]');
     }
   });

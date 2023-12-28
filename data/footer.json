@@ -23,5 +23,75 @@
   "text_map": "Map",
   "google_map":" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50607.00508097254!2d-122.35682970726366!3d37.556528792240066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f9e60efa95545%3A0xfd8efcf42dcc1ba7!2sSan%20Mateo%2C%20California%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1703486695161!5m2!1svi!2s",
 
-  "_inputs": {}
+  "_inputs": {
+    "info_company": {
+      "type": "text"
+    },
+    "background": {
+      "type": "color"
+    },
+    "ic_facebook": {
+      "type": "image"
+    },
+    "ic_google": {
+      "type": "image"
+    },
+    "ic_instagram": {
+      "type": "image"
+    },
+    "logo": {
+      "type": "image"
+    },
+    "logo_alt": {
+      "type": "text"
+    },
+    "background_color": {
+      "type": "color"
+    },
+    "title": {
+      "type": "text"
+    },
+    "icon_address": {
+      "type": "image"
+    },
+    "address": {
+      "type": "text"
+    },
+    "icon_head_phone": {
+      "type": "image"
+    },
+    "phone_number": {
+      "type": "text"
+    },
+    "icon_sms": {
+      "type": "image"
+    },
+    "text_sms": {
+      "type": "text"
+    },
+    "reservation": {
+      "type": "text"
+    },
+    "input_name": {
+      "type": "text"
+    },
+    "input_phone": {
+      "type": "text"
+    },
+    "input_message": {
+      "type": "text"
+    },
+    "button_submit": {
+      "type": "text"
+    },
+    "icon_menu_board": {
+      "type": "image"
+    },
+    "text_map": {
+      "type": "text"
+    },
+    "google_map": {
+      "type": "text"
+    }
+  }
 }

@@ -2,23 +2,19 @@
 spec:
   structures:
     - content_blocks
-  label: Editor Section
-  description: Editor Section
+  label: Hero Section
+  description: Hero Section
   icon: "cottage"
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  id: editor
-  content: lorem-ipsum
+    id: hero
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-  id: 
-    label: ID section
-    type: text
-  content: 
-    label: Content
-    type: markdown
+    id:
+      type: text
+      label: Id Section

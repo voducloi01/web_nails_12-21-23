@@ -64,7 +64,7 @@ eslint-disable vue/html-self-closing
         </swiper-slide>
       </swiper>
       <div
-        class="mt-[17px] flex gap-[12px] rounded-full bg-main px-[41px] py-[15px] text-[#FFF] font-sfPro_semibold"
+        class="mt-[17px] flex gap-[12px] rounded-full bg-main px-[41px] py-[15px] text-white font-sfPro_semibold"
       >
         <button class="text-md sm:text-xl">
           {{ block.reservation }}

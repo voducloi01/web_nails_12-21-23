@@ -1,0 +1,69 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Combo Section
+  description: Combo Section
+  icon: "cottage"
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+    id: combo
+    title: Combo
+    background_color: "#000"
+    background_image: /images/bg_combo.png
+    sub_title: Free x2 Cola’s cup
+    discount: -29%
+    image_cup_big: /images/img_cup.png
+    image_cup_big_alt: Food
+    image_cup_small: /images/img_cup.png
+    image_cup_small_alt: Food
+    image_banner: /images/banner_combo.png
+    image_banner_alt: Food
+    background_banner_below: "#FFF"
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+    id:
+      type: text
+      label: Id Section
+    title:
+      type: text
+      label: Title
+    background_color:
+      type: color
+      label: Background Color
+    background_image:
+      type: image
+      label: Background Image
+    sub_title:
+      type: text
+      label: Sub Title
+    discount:
+      type: text
+      label: Discount
+    image_cup_big:
+      type: image
+      label: Image Cup Big
+    image_cup_big_alt:
+      type: text
+      label: Image Cup Big Alt
+    image_cup_small:
+      type: image
+      label: Image Cup Small
+    image_cup_small_alt:
+      type: text
+      label: Image Cup Small Alt
+    image_banner:
+      type: image
+      label: Image Banner
+    image_banner_alt:
+      type: text
+      label: Image Banner Alt
+    background_banner_below:
+      type: color
+      label: Background Banner Below
+      

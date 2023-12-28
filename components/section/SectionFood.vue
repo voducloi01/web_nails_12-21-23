@@ -82,7 +82,7 @@
       <!-- @visit our menu -->
       <div class="md:flex hidden justify-center mt-[49px]">
         <div
-          class="flex justify-center items-center rounded-full gap-[12px] w-[280px] py-[15px] text-xl text-[#FFF] font-sfPro_semibold bg-black"
+          class="flex justify-center items-center rounded-full gap-[12px] w-[280px] py-[15px] text-xl text-white font-sfPro_semibold bg-black"
         >
           <p>{{ block.visit_our_menu }}</p>
           <div>
@@ -167,7 +167,7 @@
               </div>
               <!-- add card -->
               <button
-                class="px-[15px] py-[4px] bg-main text-[#fff] rounded-full text-sm"
+                class="px-[15px] py-[4px] bg-main text-white rounded-full text-sm"
               >
                 Add to cart
               </button>

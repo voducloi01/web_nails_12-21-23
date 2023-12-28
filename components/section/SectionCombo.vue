@@ -21,7 +21,7 @@
             <div class="w-[58.6%]">
               <div class="aspect-[1/1]">
                 <img
-                  class="image rounded-[20px] border-4 border-[#FFF]"
+                  class="image rounded-[20px] border-4 border-white"
                   :src="block.image_banner"
                   :alt="block.image_banner_alt"
                 />
@@ -38,12 +38,12 @@
             </div>
           </div>
           <div
-            class="absolute aspect-[1/1] bg-[#FFF] w-[51.5%] right-[15.5%] bottom-[21.5%] border-4 border-main"
+            class="absolute aspect-[1/1] bg-white w-[51.5%] right-[15.5%] bottom-[21.5%] border-4 border-main"
           >
             <div class="wrapper_cup_small">
               <div class="aspect-[151/207]">
                 <img
-                  class="image border-4 border-[#FFF]"
+                  class="image border-4 border-white"
                   :src="block.image_cup_small"
                   :alt="block.image_cup_small_alt"
                 />
