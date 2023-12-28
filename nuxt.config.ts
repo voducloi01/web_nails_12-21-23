@@ -22,7 +22,11 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     'nuxt-swiper',
     'nuxt-rating',
+    '@pinia/nuxt',
   ],
+  imports: {
+    dirs: ['./stores'],
+  },
   tailwindcss: {
     cssPath: '@/assets/style/tailwind.css',
   },

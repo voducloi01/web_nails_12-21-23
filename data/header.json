@@ -27,5 +27,24 @@
       "text": "Contact"
     }
   ],
-  "_inputs": {}
+  "_inputs": {
+    "logo": {
+      "type": "image"
+    },
+    "logo_alt": {
+      "type": "text"
+    },
+    "icon_close": {
+      "type": "image"
+    },
+    "icon_menu": {
+      "type": "image"
+    },
+    "icon_cart": {
+      "type": "image"
+    },
+    "bg_body": {
+      "type": "image"
+    }
+  }
 }

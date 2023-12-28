@@ -13,7 +13,9 @@
         >
           {{ block.title }}
         </p>
-        <p class="text-center text-[12px] sm:text-xl font-sfPro_semibold_italic">
+        <p
+          class="text-center text-[12px] sm:text-xl font-sfPro_semibold_italic"
+        >
           {{ block.sub_title }}
         </p>
       </div>
@@ -68,13 +70,24 @@
               class="aspect-[1/1] rounded-[40px]"
               :style="{ background: data.background_item }"
             >
-              <div class="px-[19%] mt-[-100px]">
-                <div class="aspect-[1/1]">
+              <div class="px-[19%] mt-[-100px] relative">
+                <div class="aspect-[1/1] relative">
                   <img
-                    class="shadow-1xl rounded-full w-full h-full"
+                    class="shadow-1xl rounded-full image"
                     :src="data.img_item"
                     :alt="data.img_alt_item"
                   />
+                  <div
+                    class="absolute pt-[44.8%] pl-[51.8%] -bottom-[34px] right-0"
+                  >
+                    <div class="aspect-[1/1]">
+                      <img
+                        class="shadow-1xl rounded-full image"
+                        :src="data.img_item"
+                        :alt="data.img_alt_item"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <!-- @title and @content -->
@@ -103,10 +116,27 @@
                       {{ data.price_old }}
                     </p>
                   </div>
+                  <!-- total -->
                   <div
-                    class="w-[40px] h-[40px] bg-main rounded-full hover:cursor-pointer"
+                    v-show="isQuantity"
+                    class="flex gap-[20px] items-center justify-center"
                   >
-                    <div class="p-[8px]">
+                    <div class="flex gap-[12px] items-center justify-center">
+                      <p class="w-[24px] aspect-[1/1] hover:cursor-pointer">
+                        <img class="image" :src="data.icon_plus" />
+                      </p>
+                      <p class="w-[24px] aspect-[1/1] hover:cursor-pointer">
+                        <img class="image" :src="data.icon_minus" />
+                      </p>
+                    </div>
+                  </div>
+                  <!-- ------------------- -->
+                  <div
+                    :class="isQuantity ? 'bg-[#000]' : 'bg-main'"
+                    class="w-[40px] h-[40px] rounded-full hover:cursor-pointer"
+                  >
+                    <div class="p-[8px] aspect-[1/1] flex items-center" @click="increase">
+                      <p v-show="isQuantity" class="text-white text-[13px]">{{ data.total }}</p>
                       <img class="image" :src="data.icon_cart" />
                     </div>
                   </div>
@@ -128,12 +158,23 @@
                 :style="{ background: item.background_item }"
               >
                 <div class="px-[55px] 1sm:px-[19%] mt-[-50px] 1sm:mt-[-100px]">
-                  <div class="aspect-[1/1]">
+                  <div class="aspect-[1/1] relative">
                     <img
                       class="shadow-1xl rounded-full w-full h-full"
                       :src="item.img_item"
                       :alt="item.img_alt_item"
                     />
+                    <div
+                      class="absolute pt-[44.8%] pl-[51.8%] -bottom-[20px] 1sm:-bottom-[34px] right-0"
+                    >
+                      <div class="aspect-[1/1]">
+                        <img
+                          class="shadow-1xl rounded-full image"
+                          :src="item.img_item"
+                          :alt="item.img_alt_item"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <!-- @title and @content -->
@@ -212,9 +253,41 @@
 </template>
 
 <script lang="ts" setup>
+interface Props {
+  dataBinding: any;
+  block: any;
+}
+
+const props = defineProps<Props>();
+
+const products = computed(() => props.block.menu_items)
+
+const productMapped = products.value.map((item: any) => {
+  item.banner_item.map((_item: any) => {
+    return {
+      ..._item,
+      quantity: 0
+    }
+  })
+  // console.log(item.banner_item.map((item2: any) => {
+
+  // }))
+  return { ...item }
+})
+console.log(productMapped)
+
 const swiperInstance = ref();
 const widthContainer = ref(0);
-// const widthContainer = ref();
+const isQuantity = ref(false);
+
+const increase = () => {
+  isQuantity.value = !isQuantity.value;
+  console.log(isQuantity.value)
+};
+
+// const decrease = (idx: number) => {
+//   console.log(idx);
+// };
 
 const onSwiper = (e: any) => {
   swiperInstance.value = e;
@@ -227,12 +300,6 @@ onMounted(() => {
   window?.addEventListener('resize', getWidth);
 });
 
-interface Props {
-  dataBinding: any;
-  block: any;
-}
-
-defineProps<Props>();
 </script>
 <style lang="scss" scoped>
 .swiper_mobile {

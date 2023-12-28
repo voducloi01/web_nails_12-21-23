@@ -1,139 +1,64 @@
 title: Deal
 content_blocks:
-    - _block_name: deal/home
-      id: home
-      title: Deals
-      sub_title: Our chef are cooking for you
-      menu_items:
-        - title_item: Spaghetti
-          banner_item:
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-        - title_item: Spaghetti
-          banner_item:
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-        - title_item: Spaghetti
-          banner_item:
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-            - img_item: /images/img_food.png
-              img_alt_item: Food
-              background_item: "#ffffff4d"
-              evaluate: 5
-              icon_star: /images/star.svg
-              title_item: Black pepper spaghetti
-              sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-              icon_cart: /images/ic_cart_food.svg
-              price_new: 29$
-              price_old: 39$
-          icon_minus: images/ic_minus.svg
-          icon_plus: images/ic_plus.svg
-      view_more: View more
-      text_order: Your  Order 
-      icon_cart: /images/ic_cart_food.svg
-      icon_menu_board: /images/menu_board_hero.svg
+  - _block_name: deal/home
+    id: home
+    title: Deals
+    sub_title: Our chef are cooking for you
+    menu_items:
+      - title_item: Spaghetti
+        banner_item:
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            icon_cart: /images/ic_cart_food.svg
+            price_new: 29$
+            price_old: 39$
+            icon_minus: images/ic_minus.svg
+            icon_plus: images/ic_plus.svg
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            icon_cart: /images/ic_cart_food.svg
+            price_new: 29$
+            price_old: 39$
+            icon_minus: images/ic_minus.svg
+            icon_plus: images/ic_plus.svg
+      - title_item: Noodle
+        banner_item:
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            icon_cart: /images/ic_cart_food.svg
+            price_new: 29$
+            price_old: 39$
+            icon_minus: images/ic_minus.svg
+            icon_plus: images/ic_plus.svg
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            icon_cart: /images/ic_cart_food.svg
+            price_new: 29$
+            price_old: 39$
+            icon_minus: images/ic_minus.svg
+            icon_plus: images/ic_plus.svg
+
+    view_more: View more
+    text_order: Your  Order
+    icon_cart: /images/ic_cart_food.svg
+    icon_menu_board: /images/menu_board_hero.svg

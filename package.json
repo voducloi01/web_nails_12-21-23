@@ -34,6 +34,8 @@
     "nuxt-swiper": "^1.2.2",
     "require-polyfills": "^1.0.1",
     "swiper": "^11.0.5",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "@pinia/nuxt": "^0.5.1",
+    "pinia": "^2.1.7"
   }
 }
