@@ -59,7 +59,7 @@
         :slides-per-view="'auto'"
         @swiper="onSwiper"
       >
-        <swiper-slide v-for="(items, idx) in block.menu_items" :key="idx">
+        <swiper-slide v-for="(items, idx) in productMapped" :key="idx">
           <!-- swiper desktop -->
           <div
             class="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-[36px] gap-y-[160px]"
@@ -118,27 +118,28 @@
                   </div>
                   <!-- total -->
                   <div
-                    v-show="isQuantity"
+                    v-show="data.activeCart"
                     class="flex gap-[20px] items-center justify-center"
                   >
                     <div class="flex gap-[12px] items-center justify-center">
-                      <p class="w-[24px] aspect-[1/1] hover:cursor-pointer">
+                      <p class="w-[24px] aspect-[1/1] hover:cursor-pointer" @click="plusCart(data)">
                         <img class="image" :src="data.icon_plus" />
                       </p>
-                      <p class="w-[24px] aspect-[1/1] hover:cursor-pointer">
+                      <p class="w-[24px] aspect-[1/1] hover:cursor-pointer" :class="data.quantity === 0 ? 'hover:cursor-not-allowed' : ''" @click="minusCart(data)">
                         <img class="image" :src="data.icon_minus" />
                       </p>
                     </div>
                   </div>
                   <!-- ------------------- -->
                   <div
-                    :class="isQuantity ? 'bg-[#000]' : 'bg-main'"
-                    class="w-[40px] h-[40px] rounded-full hover:cursor-pointer"
+                    :class="data.activeCart ? 'bg-[#000]' : 'bg-main'"
+                    class="min-w-[40px] h-[40px] rounded-full flex items-center justify-center px-[8px] py-[4px] gap-[10px] hover:cursor-pointer"
+                    @click="handleCart(data)"
                   >
-                    <div class="p-[8px] aspect-[1/1] flex items-center" @click="increase">
-                      <p v-show="isQuantity" class="text-white text-[13px]">{{ data.total }}</p>
-                      <img class="image" :src="data.icon_cart" />
-                    </div>
+                    <p v-show="data.activeCart" class="text-white text-[16px] leading-none">
+                      {{ data.quantity }}
+                    </p>
+                    <img class="image w-[24px] h-[24px]" :src="data.icon_cart" />
                   </div>
                 </div>
               </div>
@@ -262,27 +263,35 @@ const props = defineProps<Props>();
 
 const products = computed(() => props.block.menu_items)
 
-const productMapped = products.value.map((item: any) => {
-  item.banner_item.map((_item: any) => {
+const productMapped = products.value.map((product: any) => {
+  product.banner_item = product.banner_item.map((item: any) => {
     return {
-      ..._item,
-      quantity: 0
+      ...item,
+      quantity: 0,
+      activeCart: false
     }
-  })
-  // console.log(item.banner_item.map((item2: any) => {
-
-  // }))
-  return { ...item }
-})
-console.log(productMapped)
+  });
+  return product;
+});
 
 const swiperInstance = ref();
 const widthContainer = ref(0);
 const isQuantity = ref(false);
 
+const handleCart = (data: any) => {
+  data.activeCart = !data.activeCart;
+}
+const plusCart = (data: any) => {
+  data.quantity += 1;
+}
+const minusCart = (data: any) => {
+  if (data.quantity === 0) {
+    return;
+  }
+  data.quantity -= 1;
+}
 const increase = () => {
   isQuantity.value = !isQuantity.value;
-  console.log(isQuantity.value)
 };
 
 // const decrease = (idx: number) => {
