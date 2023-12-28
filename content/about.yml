@@ -19,6 +19,7 @@ content_blocks:
     visit_our_menu: Visit Our Menu
     image_banner: /images/banner_hero.png
     image_banner_alt: Food
+
   - _block_name: section/combo
     id: combo
     title: Combo
@@ -33,6 +34,7 @@ content_blocks:
     image_banner: /images/banner_combo.png
     image_banner_alt: Food
     background_banner_below: "#FFF"
+    
   - _block_name: about/gallery
     id: gallery
     logo: /images/logo.png

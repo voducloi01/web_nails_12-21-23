@@ -2,19 +2,57 @@
 spec:
   structures:
     - content_blocks
-  label: Hero Section
-  description: Hero Section
-  icon: "cottage"
+  label: Home Contact
+  description: Home Contact
+  icon: 'cottage'
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-    id: hero
+  id: home
+  title: Contact
+  sub_title: Contact us for support and reservations
+  open_time: Operating time
+  time_items:
+    - day: Mon- fri
+      time: 9am - 20pm
+    - day: Sat- Sun
+      time: 9am - 22pm
+  info_items:
+    - icon: /images/headphone.svg
+      content: + 1 234 456 789
+    - icon: /images/location.svg
+      content: 11011 Richmond Ave, Ste 900, Houston, TX 77042
+    - icon: /images/sms_bold.svg
+      content: contact.berly.net
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-    id:
-      type: text
-      label: Id Section
+  id:
+    type: text
+    label: Id Section
+  title:
+    type: text
+    label: Title
+  sub_title:
+    type: text
+    label: Sub Title
+  open_time:
+    type: text
+    label: Open time
+  time_items[*].day:
+    type: text
+    label: Day
+  time_items[*].time:
+    type: text
+    label: Time
+  info_items[*].icon:
+    type: image
+    label: Icon
+  info_items[*].content:
+    type: text
+    label: Content
+
+

@@ -2,19 +2,54 @@
 spec:
   structures:
     - content_blocks
-  label: Hero Section
-  description: Hero Section
-  icon: "cottage"
+  label: Home About
+  description: Home About
+  icon: 'cottage'
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-    id: hero
+  id: home
+  title: About Berly
+  sub_title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Quisque sit amet molestie eros, a molestie neque. Sed ac
+    blandit nisi, eu mattis ex. Donec vitae lorem eu lectus hendrerit
+    sollicitudin tincidunt non odio. <br /><br />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Quisque sit amet molestie eros, a molestie neque. Sed ac
+    blandit nisi, eu mattis ex. Donec vitae lorem eu lectus hendrerit
+    sollicitudin tincidunt non odio. <br /><br />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Quisque sit amet molestie eros, a molestie neque. Sed ac
+    blandit nisi, eu mattis ex. Donec vitae lorem eu lectus hendrerit
+    sollicitudin tincidunt non odio. <br /><br />
+  icon_menu_board: /images/menu_board_hero.svg
+  visit_our_menu: Visit Our Menu
+  image_banner: /images/banner_hero.png
+  image_banner_alt: Food
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-    id:
-      type: text
-      label: Id Section
+  id:
+    type: text
+    label: Id Section
+  title:
+    type: text
+    label: Title
+  sub_title:
+    type: markdown
+    label: Sub Title
+  icon_menu_board:
+    type: image
+    label: Icon Menu Board
+  visit_our_menu:
+    type: text
+    label: Visit Our Menu
+  image_banner:
+    type: image
+    label: Image Banner
+  image_banner_alt:
+    type: text
+    label: Image Banner Alt

@@ -2,19 +2,47 @@
 spec:
   structures:
     - content_blocks
-  label: Hero Section
-  description: Hero Section
-  icon: "cottage"
+  label: Reservation Contact
+  description: Reservation Contact
+  icon: 'cottage'
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-    id: hero
+  id: reservation
+  title: Reservation
+  input_name: Your Name
+  input_phone: Phone Number
+  input_message: Message
+  icon_menu_board: /images/menu_board_hero.svg
+  btn_reservation: Reservation
+  background: 'rgba(0, 0, 0, 0.70)'
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-    id:
-      type: text
-      label: Id Section
+  id:
+    type: text
+    label: Id Section
+  title:
+    type: text
+    label: Title
+  input_name:
+    type: text
+    label: Input Name
+  input_phone:
+    type: text
+    label: Input Phone
+  input_message:
+    type: text
+    label: Input Message
+  icon_menu_board:
+    type: image
+    label: Icon Menu Board
+  btn_reservation:
+    type: text
+    label: Button Text Reservation
+  background:
+    type: color
+    label: Background Color

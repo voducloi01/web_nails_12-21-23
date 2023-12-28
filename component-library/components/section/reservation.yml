@@ -2,13 +2,31 @@
 spec:
   structures:
     - content_blocks
-  label: Hero Section
-  description: Hero Section
+  label: Reservation Section
+  description: Reservation Section
   icon: "cottage"
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-    id: hero
+    id: reservation
+    logo: /images/logo.png
+    logo_alt: food
+    sub_title: Berly is preparing spaghetti for you
+    reservation_items:
+      - image: /images/reservation_img.png
+        image_alt: food
+      - image: /images/reservation_img.png
+        image_alt: food
+      - image: /images/reservation_img.png
+        image_alt: food
+      - image: /images/reservation_img.png
+        image_alt: food
+      - image: /images/reservation_img.png
+        image_alt: food
+      - image: /images/reservation_img.png
+        image_alt: food
+    reservation: Reservation
+    icon_menu_board: /images/menu_board_hero.svg
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -18,3 +36,25 @@ _inputs:
     id:
       type: text
       label: Id Section
+    logo:
+      type: image
+      label: Logo
+    logo_alt:
+      type: text
+      label: Logo Alt
+    sub_title:
+      type: text
+      label: Sub Title
+    reservation_items[*].image:
+      type: image
+      label: Item Image
+    reservation_items[*].image_alt:
+      type: text
+      label: Item Image Alt
+    reservation:
+      type: text
+      label: Reservation
+    icon_menu_board:
+      type: image
+      label: Icon Menu Board
+   

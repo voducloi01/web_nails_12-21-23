@@ -55,7 +55,7 @@
         <swiper class="w-full mt-[60px]" @swiper="onSwiper">
           <swiper-slide v-for="(data, idx) in block.gallery_items" :key="idx">
             <div
-              class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-[10px] md:gap-[40px]"
+              class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-[10px] md:gap-[40px] hover:cursor-pointer"
             >
               <div
                 v-for="(item, id) in data.images_item"

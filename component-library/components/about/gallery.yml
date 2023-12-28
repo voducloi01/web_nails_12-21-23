@@ -2,19 +2,107 @@
 spec:
   structures:
     - content_blocks
-  label: Hero Section
-  description: Hero Section
-  icon: "cottage"
+  label: Gallery About
+  description: Gallery About
+  icon: 'cottage'
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-    id: hero
+  id: gallery
+  logo: /images/logo.png
+  logo_alt: food
+  title: Visit our gallery
+  gallery_items:
+    - title_item: Spaghetti
+      images_item:
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+    - title_item: Burger
+      images_item:
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+    - title_item: Kebab
+      images_item:
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+    - title_item: Burger
+      images_item:
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+    - title_item: Burger
+      images_item:
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+    - title_item: Burger
+      images_item:
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+        - image: /images/gallery_item.png
+          image_alt: food
+  view_more: See more
+  reservation: Reservation
+  icon_menu_board: /images/menu_board_hero.svg
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-    id:
-      type: text
-      label: Id Section
+  id:
+    type: text
+    label: Id Section
+  logo:
+    type: image
+    label: Logo
+  logo_alt:
+    type: text
+    label: Logo Alt
+  title:
+    type: text
+    label: Title
+  gallery_items[*].title_item:
+    type: text
+    label: Title Item
+  gallery_items[*].images_item[*].image:
+    type: image
+    label: Image Item
+  gallery_items[*].images_item[*].image_alt:
+    type: text
+    label: Image Item Alt
+  view_more:
+    type: text
+    label: View More
+  reservation:
+    type: text
+    label: Reservation
+  icon_menu_board:
+    type: image
+    label: Icon Menu Board

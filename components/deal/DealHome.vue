@@ -42,9 +42,10 @@
               :key="idx"
               :class="[
                 swiperInstance?.activeIndex === idx
-                  ? ' rounded-full px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] active_item font-sfPro_semibold swiper__wrapper__title__item lg:text-xl md:text-md sm:text-sm text-[14px]'
-                  : ' rounded-full lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold swiper__wrapper__title__item',
+                  ? ' px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] active_item  swiper__wrapper__title__item '
+                  : ' swiper__wrapper__title__item',
               ]"
+              class="rounded-full lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold"
               @click="swiperInstance?.slideTo(idx)"
             >
               {{ data.title_item }}
@@ -62,7 +63,7 @@
         <swiper-slide v-for="(items, idx) in productMapped" :key="idx">
           <!-- swiper desktop -->
           <div
-            class="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-[36px] gap-y-[160px]"
+            class="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-[36px] gap-y-[160px] hover:cursor-pointer"
           >
             <div
               v-for="(data, id) in items.banner_item"
@@ -83,8 +84,8 @@
                     <div class="aspect-[1/1]">
                       <img
                         class="shadow-1xl rounded-full image"
-                        :src="data.img_item"
-                        :alt="data.img_alt_item"
+                        :src="data.banner_small"
+                        :alt="data.banner_small_alt"
                       />
                     </div>
                   </div>
@@ -116,17 +117,32 @@
                       {{ data.price_old }}
                     </p>
                   </div>
-                  <!-- total -->
+                  <!-- @plus  @minus -->
                   <div
                     v-show="data.activeCart"
                     class="flex gap-[20px] items-center justify-center"
                   >
                     <div class="flex gap-[12px] items-center justify-center">
-                      <p class="w-[24px] aspect-[1/1] hover:cursor-pointer" @click="plusCart(data)">
-                        <img class="image" :src="data.icon_plus" />
+                      <p
+                        class="w-[24px] aspect-[1/1] hover:cursor-pointer"
+                        @click="plusCart(data)"
+                      >
+                        <img
+                          class="image w-[24px] h-[24px]"
+                          :src="block.icon_plus"
+                        />
                       </p>
-                      <p class="w-[24px] aspect-[1/1] hover:cursor-pointer" :class="data.quantity === 0 ? 'hover:cursor-not-allowed' : ''" @click="minusCart(data)">
-                        <img class="image" :src="data.icon_minus" />
+                      <p
+                        class="w-[24px] aspect-[1/1] hover:cursor-pointer"
+                        :class="
+                          data.quantity === 0 ? 'hover:cursor-not-allowed' : ''
+                        "
+                        @click="minusCart(data)"
+                      >
+                        <img
+                          class="image w-[24px] h-[24px]"
+                          :src="block.icon_minus"
+                        />
                       </p>
                     </div>
                   </div>
@@ -136,10 +152,16 @@
                     class="min-w-[40px] h-[40px] rounded-full flex items-center justify-center px-[8px] py-[4px] gap-[10px] hover:cursor-pointer"
                     @click="handleCart(data)"
                   >
-                    <p v-show="data.activeCart" class="text-white text-[16px] leading-none">
+                    <p
+                      v-show="data.activeCart"
+                      class="text-white text-[16px] leading-none"
+                    >
                       {{ data.quantity }}
                     </p>
-                    <img class="image w-[24px] h-[24px]" :src="data.icon_cart" />
+                    <img
+                      class="image w-[24px] h-[24px]"
+                      :src="block.icon_cart"
+                    />
                   </div>
                 </div>
               </div>
@@ -171,8 +193,8 @@
                       <div class="aspect-[1/1]">
                         <img
                           class="shadow-1xl rounded-full image"
-                          :src="item.img_item"
-                          :alt="item.img_alt_item"
+                          :src="item.banner_small"
+                          :alt="item.banner_small_alt"
                         />
                       </div>
                     </div>
@@ -199,8 +221,13 @@
                   <p class="text-[12px] 1sm:text-sm">
                     {{ item.sub_title_item }}
                   </p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center justify-center gap-[12px]">
+
+                  <div
+                    :class="item.activeCart ? '1sm:grid-cols-3 ' : ''"
+                    class="grid grid-cols-2 gap-[10px] 1sm:gap-[0px]"
+                  >
+                    <!-- price new -->
+                    <div class="flex items-center justify-start gap-[12px]">
                       <p class="text-main text-lg 1sm:text-xl font-sfPro_bold">
                         {{ item.price_new }}
                       </p>
@@ -208,11 +235,75 @@
                         {{ item.price_old }}
                       </p>
                     </div>
+                    <!-- plus minus -->
                     <div
-                      class="w-[40px] h-[40px] bg-main rounded-full hover:cursor-pointer"
+                      v-show="item.activeCart"
+                      class="flex gap-[20px] items-center justify-center"
                     >
-                      <div class="p-[8px]">
-                        <img class="image" :src="item.icon_cart" />
+                      <div class="flex gap-[12px] items-center justify-center">
+                        <p
+                          class="w-[24px] aspect-[1/1] hover:cursor-pointer"
+                          @click="plusCart(item)"
+                        >
+                          <img
+                            class="image w-[24px] h-[24px]"
+                            :src="block.icon_plus"
+                          />
+                        </p>
+                        <p
+                          class="w-[24px] aspect-[1/1] hover:cursor-pointer"
+                          :class="
+                            item.quantity === 0
+                              ? 'hover:cursor-not-allowed'
+                              : ''
+                          "
+                          @click="minusCart(item)"
+                        >
+                          <img
+                            class="image w-[24px] h-[24px]"
+                            :src="block.icon_minus"
+                          />
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      :class="
+                        item.activeCart
+                          ? 'col-span-2 1sm:col-span-1 justify-center'
+                          : ''
+                      "
+                      class="flex justify-end"
+                    >
+                      <div
+                        :class="
+                          item.activeCart
+                            ? 'bg-black w-full 1sm:m-w-[40px]'
+                            : 'bg-main w-[40px]  '
+                        "
+                        class="h-[40px] rounded-full hover:cursor-pointer flex items-center justify-center px-[10px] py-[8px] gap-[12px] 1sm:gap-[8px]"
+                        @click="handleCart(item)"
+                      >
+                        <p
+                          v-show="item.activeCart"
+                          class="text-white text-lg font-sfPro_semibold"
+                        >
+                          {{ item.quantity }}
+                        </p>
+                        <div class="w-[24px] aspect-[1/1]">
+                          <img
+                            :class="item.activeCart ? 'hidden 1sm:block' : ''"
+                            class="image"
+                            :src="block.icon_cart"
+                          />
+                          <img
+                            :class="
+                              item.activeCart ? 'block 1sm:hidden' : 'hidden'
+                            "
+                            class="image 1sm:hidden block"
+                            :src="block.icon_menu_board"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -239,12 +330,8 @@
           >
             <button>{{ block.text_order }}</button>
             <p class="w-[24px] sm:w-[30px] aspect-[1/1]">
-              <img
-                class="image"
-                :src="
-                  widthContainer < 640 ? block.icon_menu_board : block.icon_cart
-                "
-              />
+              <img class="image sm:block hidden" :src="block.icon_cart" />
+              <img class="image sm:hidden block" :src="block.icon_menu_board" />
             </p>
           </div>
         </div>
@@ -258,10 +345,11 @@ interface Props {
   dataBinding: any;
   block: any;
 }
-
 const props = defineProps<Props>();
 
-const products = computed(() => props.block.menu_items)
+const swiperInstance = ref();
+
+const products = computed(() => props.block.menu_items);
 
 const productMapped = products.value.map((product: any) => {
   product.banner_item = product.banner_item.map((item: any) => {
@@ -269,45 +357,27 @@ const productMapped = products.value.map((product: any) => {
       ...item,
       quantity: 0,
       activeCart: false
-    }
+    };
   });
   return product;
 });
 
-const swiperInstance = ref();
-const widthContainer = ref(0);
-const isQuantity = ref(false);
-
 const handleCart = (data: any) => {
   data.activeCart = !data.activeCart;
-}
+};
 const plusCart = (data: any) => {
   data.quantity += 1;
-}
+};
 const minusCart = (data: any) => {
   if (data.quantity === 0) {
     return;
   }
   data.quantity -= 1;
-}
-const increase = () => {
-  isQuantity.value = !isQuantity.value;
 };
-
-// const decrease = (idx: number) => {
-//   console.log(idx);
-// };
 
 const onSwiper = (e: any) => {
   swiperInstance.value = e;
 };
-
-const getWidth = () => {
-  widthContainer.value = document.body.clientWidth;
-};
-onMounted(() => {
-  window?.addEventListener('resize', getWidth);
-});
 
 </script>
 <style lang="scss" scoped>
