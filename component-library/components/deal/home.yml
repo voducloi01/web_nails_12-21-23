@@ -8,7 +8,65 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-    id: hero
+    id: home
+    title: Deals
+    sub_title: Our chef are cooking for you
+    menu_items:
+      - title_item: Spaghetti
+        banner_item:
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            banner_small: /images/img_food.png
+            banner_small_alt: Food 
+            new_price: 29$
+            old_price: 39$       
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            banner_small: /images/img_food.png
+            banner_small_alt: Food 
+            new_price: 29$
+            old_price: 39$    
+      - title_item: Spaghetti
+        banner_item:
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            banner_small: /images/img_food.png
+            banner_small_alt: Food 
+            new_price: 29$
+            old_price: 39$       
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            banner_small: /images/img_food.png
+            banner_small_alt: Food 
+            new_price: 29$
+            old_price: 39$    
+    view_more: View more
+    text_order: Your  Order
+    icon_cart: /images/ic_cart_food.svg
+    icon_menu_board: /images/menu_board_hero.svg
+    icon_minus: images/ic_minus.svg
+    icon_plus: images/ic_plus.svg
+    text_add_cart: Add to cart
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -18,3 +76,66 @@ _inputs:
     id:
       type: text
       label: Id Section
+    title:
+      type: text
+      label: Title
+    sub_title:
+      type: text
+      label: Sub Title
+    menu_items[*].title_item:
+      type: text
+      label: Title Item
+    menu_items[*].banner_item[*].img_item:
+      type: image
+      label: Image Item
+    menu_items[*].banner_item[*].img_alt_item:
+      type: text
+      label: Image Item Alt
+    menu_items[*].banner_item[*].background_item:
+      type: color
+      label: Background Color Item
+    menu_items[*].banner_item[*].evaluate:
+      type: text
+      label: Evaluate
+    menu_items[*].banner_item[*].icon_star:
+      type: image
+      label: Icon Star
+    menu_items[*].banner_item[*].title_item:
+      type: text
+      label: Title Banner Item
+    menu_items[*].banner_item[*].sub_title_item:
+      type: text
+      label: Sub Title Banner Item
+    menu_items[*].banner_item[*].banner_small:
+      type: image
+      label: Banner Small
+    menu_items[*].banner_item[*].banner_small_alt:
+      type: text
+      label: Banner Small Alt
+    menu_items[*].banner_item[*].new_price:
+      type: text
+      label: New Price
+    menu_items[*].banner_item[*].old_price:
+      type: text
+      label: Old Price
+    view_more:
+      type: text
+      label: View More
+    text_order:
+      type: text
+      label: Text Order
+    icon_cart:
+      type: image
+      label: Icon Card
+    icon_menu_board:
+      type: image
+      label: Icon Menu Board
+    icon_minus:
+      type: image
+      label: Icon Minus
+    icon_plus:
+      type: image
+      label: Icon Plus
+    text_add_cart:
+      type: text
+      label: Text Add Card

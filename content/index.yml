@@ -33,54 +33,23 @@ content_blocks:
     items:
       - img_item: /images/img_food.png
         img_alt_item: Food
-        background_item: "#ffffff4d"
+        background_item: '#ffffff4d'
         evaluate: 5
         icon_star: /images/star.svg
         title_item: Black pepper spaghetti
         sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-        icon_cart: /images/ic_cart_food.svg
-        price_new: 29$
-        price_old: 39$
+        new_price: 29$
+        old_price: 39$
       - img_item: /images/img_food.png
         img_alt_item: Food
-        background_item: "#ffffff4d"
+        background_item: '#ffffff4d'
         evaluate: 5
         icon_star: /images/star.svg
         title_item: Black pepper spaghetti
         sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-        icon_cart: /images/ic_cart_food.svg
-        price_new: 29$
-        price_old: 39$
-      - img_item: /images/img_food.png
-        img_alt_item: Food
-        background_item: "#ffffff4d"
-        evaluate: 5
-        icon_star: /images/star.svg
-        title_item: Black pepper spaghetti
-        sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-        icon_cart: /images/ic_cart_food.svg
-        price_new: 29$
-        price_old: 39$
-      - img_item: /images/img_food.png
-        img_alt_item: Food
-        background_item: "#ffffff4d"
-        evaluate: 5
-        icon_star: /images/star.svg
-        title_item: Black pepper spaghetti
-        sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-        icon_cart: /images/ic_cart_food.svg
-        price_new: 29$
-        price_old: 39$
-      - img_item: /images/img_food.png
-        img_alt_item: Food
-        background_item: "#ffffff4d"
-        evaluate: 5
-        icon_star: /images/star.svg
-        title_item: Black pepper spaghetti
-        sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
-        icon_cart: /images/ic_cart_food.svg
-        price_new: 29$
-        price_old: 39$
+        new_price: 29$
+        old_price: 39$
+    icon_cart: /images/ic_cart_food.svg
     add_cart: Add to cart
     visit_our_menu: Visit Our Menu
     icon_menu_board: /images/menu_board_hero.svg
@@ -90,7 +59,7 @@ content_blocks:
   - _block_name: section/combo
     id: combo
     title: Combo
-    background_color: "#000"
+    background_color: '#000'
     background_image: /images/bg_combo.png
     sub_title: Free x2 Cola’s cup
     discount: -29%
@@ -100,7 +69,7 @@ content_blocks:
     image_cup_small_alt: Food
     image_banner: /images/banner_combo.png
     image_banner_alt: Food
-    background_banner_below: "#FFF"
+    background_banner_below: '#FFF'
 
   - _block_name: section/reservation
     id: reservation
@@ -122,5 +91,3 @@ content_blocks:
         image_alt: food
     reservation: Reservation
     icon_menu_board: /images/menu_board_hero.svg
-
-   

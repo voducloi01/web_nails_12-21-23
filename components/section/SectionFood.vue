@@ -26,11 +26,12 @@
         class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-[36px] gap-y-[200px]"
       >
         <div
-          v-for="(data, idx) in block.items"
+          v-for="(data, idx) in productMapped"
           :key="idx"
           class="aspect-[1/1] rounded-[40px] wrapper__banner"
           :style="{ background: data.background_item }"
         >
+          <pre>{{ data }}</pre>
           <div class="px-[19%] mt-[-100px] wrapper__banner__item">
             <div class="aspect-[1/1]">
               <img
@@ -62,18 +63,31 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center justify-center gap-[12px]">
                 <p class="text-main text-xl font-sfPro_bold">
-                  {{ data.price_new }}
+                  {{ data.new_price }}
                 </p>
                 <p class="text-sm text-[#888888] line-through">
-                  {{ data.price_old }}
+                  {{ data.old_price }}
                 </p>
               </div>
+              <div class="flex justify-center items-center gap-[12px] pl-1">
+                <img :src="block.icon_plus" class="w-[24px] aspect-[1/1]" />
+                <img :src="block.icon_minus" class="w-[24px] aspect-[1/1]" />
+              </div>
               <div
-                class="w-[40px] h-[40px] bg-main rounded-full hover:cursor-pointer"
+                :class="data.isActive ? 'bg-black' : 'bg-main'"
+                class="rounded-full hover:cursor-pointer flex items-center justify-center"
+                @click="handleActiveCard(data)"
               >
-                <div class="p-[8px]">
-                  <img class="image" :src="data.icon_cart" />
-                </div>
+                {{ data.isActive }}
+                <p
+                  v-show="data.isActive"
+                  class="text-white text-lg font-sfPro_semibold pl-[16px]"
+                >
+                  1
+                </p>
+                <p class="w-[24px] m-[8px] aspect-[1/1]">
+                  <img class="image" :src="block.icon_cart" />
+                </p>
               </div>
             </div>
           </div>
@@ -151,17 +165,17 @@
               <div class="flex items-center justify-between">
                 <div class="flex items-center justify-center gap-[12px]">
                   <p class="text-main font-sfPro_bold">
-                    {{ data.price_new }}
+                    {{ data.new_price }}
                   </p>
                   <p class="text-[#888888] line-through text-sm">
-                    {{ data.price_old }}
+                    {{ data.old_price }}
                   </p>
                 </div>
                 <div
                   class="w-[40px] h-[40px] bg-main rounded-full hover:cursor-pointer"
                 >
                   <div class="p-[8px]">
-                    <img class="image" :src="data.icon_cart" />
+                    <img class="image" :src="block.icon_cart" />
                   </div>
                 </div>
               </div>
@@ -185,8 +199,21 @@ interface Props {
   block: any;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const product = computed(() => props.block.items);
+
+const productMapped = ref(
+  product.value.map((e: any) => {
+    return { ...e, quantity: 0, isActive: false };
+  })
+);
+
+const handleActiveCard = (item: any) => {
+  item.isActive = !item.isActive;
+};
 </script>
+
 <style lang="scss" scoped>
 .wrapper__banner:nth-child(3n - 1) {
   .wrapper__banner__item {

@@ -100,10 +100,10 @@
                 <div class="flex items-center justify-between">
                   <div class="flex items-center justify-center gap-[12px]">
                     <p class="text-main text-xl font-sfPro_bold">
-                      {{ data.price_new }}
+                      {{ data.new_price }}
                     </p>
                     <p class="text-sm text-[#888888] line-through">
-                      {{ data.price_old }}
+                      {{ data.old_price }}
                     </p>
                   </div>
                   <!-- @plus  @minus -->
@@ -180,7 +180,7 @@
                 </div>
                 <!-- @title and @content -->
                 <div
-                  class="flex flex-col gap-[12px] px-[15px] 1sm:px-[12.5%] pb-[33px]"
+                  class="flex flex-col gap-[12px] px-[15px] 1sm:px-[12.5%] pb-[20px] 1sm:pb-[33px]"
                 >
                   <div class="flex gap-[10px] justify-start items-center">
                     <!-- evaluate -->
@@ -201,22 +201,21 @@
                   </p>
 
                   <div
-                    :class="item.activeCart ? '1sm:grid-cols-3 ' : ''"
-                    class="grid grid-cols-2 gap-[10px] 1sm:gap-[0px]"
+                    class="grid grid-cols-2 gap-[10px]"
                   >
                     <!-- price new -->
                     <div class="flex items-center justify-start gap-[12px]">
                       <p class="text-main text-lg 1sm:text-xl font-sfPro_bold">
-                        {{ item.price_new }}
+                        {{ item.new_price }}
                       </p>
                       <p class="text-sm text-[#888888] line-through">
-                        {{ item.price_old }}
+                        {{ item.old_price }}
                       </p>
                     </div>
                     <!-- plus minus -->
                     <div
                       v-show="item.activeCart"
-                      class="flex gap-[20px] items-center justify-center"
+                      class="flex gap-[20px] items-center justify-end"
                     >
                       <div class="flex gap-[12px] items-center justify-center">
                         <p
@@ -245,21 +244,10 @@
                       </div>
                     </div>
 
-                    <div
-                      :class="
-                        item.activeCart
-                          ? 'col-span-2 1sm:col-span-1 justify-center'
-                          : ''
-                      "
-                      class="flex justify-end"
-                    >
+                    <div class="flex justify-center col-span-2">
                       <div
-                        :class="
-                          item.activeCart
-                            ? 'bg-black w-full 1sm:m-w-[40px]'
-                            : 'bg-main w-[40px]  '
-                        "
-                        class="h-[40px] rounded-full hover:cursor-pointer flex items-center justify-center px-[10px] py-[8px] gap-[12px] 1sm:gap-[8px]"
+                        :class="item.activeCart ? 'bg-black' : 'bg-main'"
+                        class="w-full h-[40px] rounded-full hover:cursor-pointer flex items-center justify-center px-[10px] py-[8px] gap-[12px] 1sm:gap-[8px]"
                         @click="handleCart(item)"
                       >
                         <p
@@ -268,19 +256,13 @@
                         >
                           {{ item.quantity }}
                         </p>
-                        <div class="w-[24px] aspect-[1/1]">
-                          <img
-                            :class="item.activeCart ? 'hidden 1sm:block' : ''"
-                            class="image"
-                            :src="block.icon_cart"
-                          />
-                          <img
-                            :class="
-                              item.activeCart ? 'block 1sm:hidden' : 'hidden'
-                            "
-                            class="image 1sm:hidden block"
-                            :src="block.icon_menu_board"
-                          />
+                        <div class="flex justify-center items-center 1sm:gap-[15px] gap-[10px]">
+                          <p class="text-white text-sm 1sm:text-lg font-sfPro_semibold">
+                            {{ block.text_add_cart }}
+                          </p>
+                          <div class="w-[24px] aspect-[1/1]">
+                            <img class="image" :src="block.icon_menu_board" />
+                          </div>
                         </div>
                       </div>
                     </div>
