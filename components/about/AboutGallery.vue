@@ -96,18 +96,18 @@
 </template>
 
 <script lang="ts" setup>
+interface Props {
+  dataBinding: any;
+  block: any;
+}
+defineProps<Props>();
+
 const swiperInstance = ref();
 
 const onSwiper = (e: any) => {
   swiperInstance.value = e;
 };
 
-interface Props {
-  dataBinding: any;
-  block: any;
-}
-
-defineProps<Props>();
 </script>
 <style lang="scss" scoped>
 .swiper__wrapper__title {

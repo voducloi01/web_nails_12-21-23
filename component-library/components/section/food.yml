@@ -9,6 +9,33 @@ spec:
 # Defines the structure of this component, as well as the default values
 blueprint:
     id: food
+    title: Top Food
+    sub_title: Popular food
+    items:
+      - img_item: /images/img_food.png
+        img_alt_item: Food
+        background_item: '#ffffff4d'
+        evaluate: 5
+        icon_star: /images/star.svg
+        title_item: Black pepper spaghetti
+        sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+        new_price: 29$
+        old_price: 39$
+      - img_item: /images/img_food.png
+        img_alt_item: Food
+        background_item: '#ffffff4d'
+        evaluate: 5
+        icon_star: /images/star.svg
+        title_item: Black pepper spaghetti
+        sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+        new_price: 29$
+        old_price: 39$
+    icon_cart: /images/ic_cart_food.svg
+    add_cart: Add to cart
+    visit_our_menu: Visit Our Menu
+    icon_menu_board: /images/menu_board_hero.svg
+    icon_minus: images/ic_minus.svg
+    icon_plus: images/ic_plus.svg
     
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
@@ -19,3 +46,54 @@ _inputs:
     id:
       type: text
       label: Id Section
+    title:
+      type: text
+      label: Title
+    sub_title:
+      type: text
+      label: Sub Title
+    items[*].img_item:
+      type: image
+      label: Image Item
+    items[*].img_alt_item:
+      type: text
+      label: Image Item Alt
+    items[*].background_item:
+      type: color
+      label: Background Item color
+    items[*].evaluate:
+      type: text
+      label: Evaluate
+    items[*].icon_star:
+      type: image
+      label: Icon star
+    items[*].title_item:
+      type: text
+      label: Title Item
+    items[*].sub_title_item:
+      type: text
+      label: Sub Title Item
+    items[*].new_price:
+      type: text
+      label: New Price
+    items[*].old_price:
+      type: text
+      label: Old Price
+    icon_cart:
+      type: image
+      label: Icon Cart
+    add_cart:
+      type: text
+      label: Add Cart
+    visit_our_menu:
+      type: text
+      label: Visit Our Menu
+    icon_menu_board:
+      type: image
+      label: Icon Menu Board
+    icon_minus:
+      type: image
+      label: Icon Minus
+    icon_plus:
+      type: image
+      label: Icon Plus

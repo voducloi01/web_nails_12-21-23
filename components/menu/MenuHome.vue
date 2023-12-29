@@ -135,7 +135,7 @@
                       </p>
                     </div>
                   </div>
-                  <!-- ------------------- -->
+                  <!-- --------------------->
                   <div
                     :class="data.activeCart ? 'bg-[#000]' : 'bg-main'"
                     class="min-w-[40px] h-[40px] rounded-full flex items-center justify-center px-[8px] py-[4px] gap-[10px] hover:cursor-pointer"
@@ -200,9 +200,7 @@
                     {{ item.sub_title_item }}
                   </p>
 
-                  <div
-                    class="grid grid-cols-2 gap-[10px]"
-                  >
+                  <div class="grid grid-cols-2 gap-[10px]">
                     <!-- price new -->
                     <div class="flex items-center justify-start gap-[12px]">
                       <p class="text-main text-lg 1sm:text-xl font-sfPro_bold">
@@ -256,8 +254,12 @@
                         >
                           {{ item.quantity }}
                         </p>
-                        <div class="flex justify-center items-center 1sm:gap-[15px] gap-[10px]">
-                          <p class="text-white text-sm 1sm:text-lg font-sfPro_semibold">
+                        <div
+                          class="flex justify-center items-center 1sm:gap-[15px] gap-[10px]"
+                        >
+                          <p
+                            class="text-white text-sm 1sm:text-lg font-sfPro_semibold"
+                          >
                             {{ block.text_add_cart }}
                           </p>
                           <div class="w-[24px] aspect-[1/1]">
@@ -325,6 +327,7 @@ const productMapped = products.value.map((product: any) => {
 const handleCart = (data: any) => {
   data.activeCart = !data.activeCart;
 };
+
 const plusCart = (data: any) => {
   data.quantity += 1;
 };

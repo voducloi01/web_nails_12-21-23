@@ -77,18 +77,17 @@
 </template>
 
 <script lang="ts" setup>
-const input = reactive({
-  name: '',
-  phone: '',
-  mess: ''
-});
-
 interface Props {
   dataBinding: any;
   block: any;
 }
 
 defineProps<Props>();
+const input = reactive({
+  name: '',
+  phone: '',
+  mess: ''
+});
 </script>
 <style lang="scss" scoped>
 /* Chrome, Safari, Edge, Opera */

@@ -83,6 +83,12 @@
   </section>
 </template>
 <script lang="ts" setup>
+interface Props {
+  dataBinding: any;
+  block: any;
+}
+
+defineProps<Props>();
 const swiperInstance = ref();
 
 const onSwiper = (e: any) => {
@@ -97,12 +103,6 @@ const handlePrev = () => {
   swiperInstance.value.slidePrev();
 };
 
-interface Props {
-  dataBinding: any;
-  block: any;
-}
-
-defineProps<Props>();
 </script>
 <style lang="scss" scoped>
 .swiper_wrapper {

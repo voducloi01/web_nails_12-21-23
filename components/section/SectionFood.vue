@@ -31,7 +31,6 @@
           class="aspect-[1/1] rounded-[40px] wrapper__banner"
           :style="{ background: data.background_item }"
         >
-          <pre>{{ data }}</pre>
           <div class="px-[19%] mt-[-100px] wrapper__banner__item">
             <div class="aspect-[1/1]">
               <img
@@ -69,21 +68,31 @@
                   {{ data.old_price }}
                 </p>
               </div>
-              <div class="flex justify-center items-center gap-[12px] pl-1">
-                <img :src="block.icon_plus" class="w-[24px] aspect-[1/1]" />
-                <img :src="block.icon_minus" class="w-[24px] aspect-[1/1]" />
+              <div
+                v-show="data.isActive"
+                class="flex justify-center items-center gap-[12px] pl-1"
+              >
+                <img
+                  :src="block.icon_plus"
+                  class="w-[24px] aspect-[1/1]"
+                  @click="plusCart(data)"
+                />
+                <img
+                  :src="block.icon_minus"
+                  class="w-[24px] aspect-[1/1]"
+                  @click="minusCart(data)"
+                />
               </div>
               <div
                 :class="data.isActive ? 'bg-black' : 'bg-main'"
                 class="rounded-full hover:cursor-pointer flex items-center justify-center"
                 @click="handleActiveCard(data)"
               >
-                {{ data.isActive }}
                 <p
                   v-show="data.isActive"
                   class="text-white text-lg font-sfPro_semibold pl-[16px]"
                 >
-                  1
+                  {{ data.quantity }}
                 </p>
                 <p class="w-[24px] m-[8px] aspect-[1/1]">
                   <img class="image" :src="block.icon_cart" />
@@ -126,7 +135,7 @@
         }"
       >
         <swiper-slide
-          v-for="(data, idx) in block.items"
+          v-for="(data, idx) in productMapped"
           :key="idx"
           class="relative wrapper__swiper__item aspect-[1/1]"
         >
@@ -163,7 +172,7 @@
                 v-html="data.sub_title_item"
               />
               <div class="flex items-center justify-between">
-                <div class="flex items-center justify-center gap-[12px]">
+                <div class="flex items-center justify-center gap-[14px]">
                   <p class="text-main font-sfPro_bold">
                     {{ data.new_price }}
                   </p>
@@ -172,18 +181,47 @@
                   </p>
                 </div>
                 <div
-                  class="w-[40px] h-[40px] bg-main rounded-full hover:cursor-pointer"
+                  v-show="!data.isActive"
+                  class="flex justify-center items-center gap-[20px] pl-1"
                 >
-                  <div class="p-[8px]">
-                    <img class="image" :src="block.icon_cart" />
-                  </div>
+                  <img
+                    :src="block.icon_plus"
+                    class="w-[24px] aspect-[1/1]"
+                    @click="plusCart(data)"
+                  />
+                  <img
+                    :src="block.icon_minus"
+                    class="w-[24px] aspect-[1/1]"
+                    @click="minusCart(data)"
+                  />
                 </div>
               </div>
               <!-- add card -->
               <button
-                class="px-[15px] py-[4px] bg-main text-white rounded-full text-sm"
+                :class="!data.isActive ? 'bg-black' : 'bg-main'"
+                class="px-[15px] py-[4px] text-white rounded-full text-sm"
+                @click="handleActiveCard(data)"
               >
-                Add to cart
+                <div
+                  v-show="data.isActive"
+                  class="flex items-center justify-center gap-[12px]"
+                >
+                  <p
+                    class="font-sfPro_semibold text-[16px] text-white py-[4px]"
+                  >
+                    {{ block.add_cart }}
+                  </p>
+                  <img class="w-[24px] image" :src="block.icon_menu_board" />
+                </div>
+                <div
+                  v-show="!data.isActive"
+                  class="flex items-center justify-center gap-[12px]"
+                >
+                  <p class="font-sfPro_semibold text-[16px] text-white">
+                    {{ data.quantity }}
+                  </p>
+                  <img class="w-[24px] image" :src="block.icon_menu_board" />
+                </div>
               </button>
             </div>
           </div>
@@ -211,6 +249,16 @@ const productMapped = ref(
 
 const handleActiveCard = (item: any) => {
   item.isActive = !item.isActive;
+};
+
+const plusCart = (data: any) => {
+  data.quantity += 1;
+};
+const minusCart = (data: any) => {
+  if (data.quantity === 0) {
+    return;
+  }
+  data.quantity -= 1;
 };
 </script>
 
