@@ -26,6 +26,7 @@ blueprint:
   visit_our_menu: Visit Our Menu
   image_banner: /images/banner_hero.png
   image_banner_alt: Food
+  link_menu: /menu
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -53,3 +54,6 @@ _inputs:
   image_banner_alt:
     type: text
     label: Image Banner Alt
+  link_menu: 
+    type: text
+    label: Link Menu

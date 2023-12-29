@@ -36,7 +36,9 @@
               <button
                 class="text-white sm:text-md md:text-lg lg:text-xl font-sfPro_semibold hover:cursor-pointer"
               >
-                {{ block.visit_our_menu }}
+                <NuxtLink :to="block.link_menu">
+                  {{ block.visit_our_menu }}
+                </NuxtLink>
               </button>
               <p class="w-[24px] sm:w-[30px] aspect-[1/1]">
                 <img class="image" :src="block.icon_menu_board" />

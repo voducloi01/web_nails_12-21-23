@@ -19,6 +19,7 @@ content_blocks:
     visit_our_menu: Visit Our Menu
     image_banner: /images/banner_hero.png
     image_banner_alt: Food
+    link_menu: /menu
 
   - _block_name: section/combo
     id: combo

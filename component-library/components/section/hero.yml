@@ -11,28 +11,19 @@ blueprint:
     id: hero
     icon_right: /images/ic_right.svg
     icon_left: /images/ic_left.svg
+    title: Tasty <p/> Food is waiting </p> afor you
+    sub_title:
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit
+          amet molestie eros, a molestie neque. Sed ac blandit nisi, eu mattis ex.
+          Donec vitae lorem eu lectus hendrerit sollicitudin tincidunt non odio.
+    visit_our_menu: Visit Our Menu
+    icon_menu_board: /images/menu_board_hero.svg
+    link_menu: /menu
     item_banner:
       - image_banner: /images/banner_hero.png
         image_banner_alt: Food
-        title: Tasty <p/> Food is waiting </p> afor you
-        sub_title:
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit
-          amet molestie eros, a molestie neque. Sed ac blandit nisi, eu mattis ex.
-          Donec vitae lorem eu lectus hendrerit sollicitudin tincidunt non odio.
-        visit_our_menu: Visit Our Menu
-        icon_menu_board: /images/menu_board_hero.svg
-        link_menu: /menu
       - image_banner: /images/banner_hero.png
         image_banner_alt: Food
-        title: Tasty <p/> Food is waiting </p> afor you
-        sub_title:
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit
-          amet molestie eros, a molestie neque. Sed ac blandit nisi, eu mattis ex.
-          Donec vitae lorem eu lectus hendrerit sollicitudin tincidunt non odio.
-        visit_our_menu: Visit Our Menu
-        icon_menu_board: /images/menu_board_hero.svg
-        link_menu: /menu
-
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
@@ -53,19 +44,19 @@ _inputs:
     item_banner[*].image_banner_alt:
       type: text
       label: Image Banner Alt
-    item_banner[*].title:
+    title:
       type: text
       label: Item Title
-    item_banner[*].sub_title:
+    sub_title:
       type: markdown
       label: Item Sub Title
-    item_banner[*].visit_our_menu:
+    visit_our_menu:
       type: Text
       label: Visit Our Menu
-    item_banner[*].icon_menu_board:
+    icon_menu_board:
       type: image
       label: Icon Menu Board
-    item_banner[*].link_menu:
+    link_menu:
       type: text
       label: Link Menu
 

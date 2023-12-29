@@ -2,29 +2,23 @@ title: Home
 content_blocks:
   - _block_name: section/hero
     id: hero
+    link_menu: /menu
+    title: Tasty <p/> Food is waiting </p> afor you
+    sub_title:
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit
+      amet molestie eros, a molestie neque. Sed ac blandit nisi, eu mattis ex.
+      Donec vitae lorem eu lectus hendrerit sollicitudin tincidunt non odio.
+    visit_our_menu: Visit Our Menu
+    icon_menu_board: /images/menu_board_hero.svg
     icon_right: /images/ic_right.svg
     icon_left: /images/ic_left.svg
     item_banner:
       - image_banner: /images/banner_hero.png
         image_banner_alt: Food
-        title: Tasty <p/> Food is waiting </p> afor you
-        sub_title:
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit
-          amet molestie eros, a molestie neque. Sed ac blandit nisi, eu mattis ex.
-          Donec vitae lorem eu lectus hendrerit sollicitudin tincidunt non odio.
-        visit_our_menu: Visit Our Menu
-        icon_menu_board: /images/menu_board_hero.svg
-        link_menu: /menu
       - image_banner: /images/banner_hero.png
         image_banner_alt: Food
-        title: Tasty <p/> Food is waiting </p> afor you
-        sub_title:
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit
-          amet molestie eros, a molestie neque. Sed ac blandit nisi, eu mattis ex.
-          Donec vitae lorem eu lectus hendrerit sollicitudin tincidunt non odio.
-        visit_our_menu: Visit Our Menu
-        icon_menu_board: /images/menu_board_hero.svg
-        link_menu: /menu
+      - image_banner: /images/banner_hero.png
+        image_banner_alt: Food
 
   - _block_name: section/food
     id: food
