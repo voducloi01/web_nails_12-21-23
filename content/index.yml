@@ -3,7 +3,7 @@ content_blocks:
   - _block_name: section/hero
     id: hero
     link_menu: /menu
-    title: Tasty <p/> Food is waiting </p> afor you
+    title: Tasty </br> Food is waiting for you
     sub_title:
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit
       amet molestie eros, a molestie neque. Sed ac blandit nisi, eu mattis ex.
@@ -15,7 +15,7 @@ content_blocks:
     item_banner:
       - image_banner: /images/banner_hero.png
         image_banner_alt: Food
-      - image_banner: /images/banner_hero.png
+      - image_banner: /images/banner_hero1.png
         image_banner_alt: Food
       - image_banner: /images/banner_hero.png
         image_banner_alt: Food
