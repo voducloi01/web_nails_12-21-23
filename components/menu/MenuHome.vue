@@ -20,38 +20,24 @@
         </p>
       </div>
       <div class="swiper__wrapper">
-        <div class="flex justify-center gap-4">
-          <swiper
-            :slides-per-view="'auto'"
-            space-between="20"
-            :breakpoints="{
-              '640': {
-                spaceBetween: 20,
-              },
-              '768': {
-                spaceBetween: 40,
-              },
-              '1024': {
-                spaceBetween: 60,
-              },
-            }"
-            class="swiper__wrapper__title"
+        <div class="swiper__wrapper__title">
+          <div
+            v-for="(data, idx) in block.menu_items"
+            :key="idx"
+            :class="[
+              swiperInstance?.activeIndex === idx
+                ? 'active_item  swiper__wrapper__title__item '
+                : 'swiper__wrapper__title__item',
+            ]"
+            class="rounded-full"
           >
-
-            <swiper-slide
-              v-for="(data, idx) in block.menu_items"
-              :key="idx"
-              :class="[
-                swiperInstance?.activeIndex === idx
-                  ? ' px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] active_item  swiper__wrapper__title__item '
-                  : ' px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] swiper__wrapper__title__item',
-              ]"
-              class="rounded-full lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold"
+            <div
+              class="z-30 px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold"
               @click="swiperInstance?.slideTo(idx)"
-            >
+              >
               {{ data.title_item }}
-            </swiper-slide>
-          </swiper>
+            </div>
+          </div>
         </div>
       </div>
       <!-- grid desktop -->
@@ -382,17 +368,12 @@ const onSwiper = (e: any) => {
 .swiper__wrapper {
   padding-top: 30px;
 }
-
-.swiper__wrapper__title {
-  &__item {
-    width: auto !important;
-  }
-}
-.swiper__wrapper .swiper__wrapper__title :deep(.swiper-slide) {
+.swiper__wrapper__title{
   display: flex;
-  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
 }
-
 .swiper__wrapper__title__item {
   background-position: 0 0;
   transition: background 0.3s ease-in-out;

@@ -4,7 +4,7 @@ spec:
     - content_blocks
   label: Reservation Contact
   description: Reservation Contact
-  icon: 'cottage'
+  icon: 'i-mdi-book-settings-outline'
 
 # Defines the structure of this component, as well as the default values
 blueprint:

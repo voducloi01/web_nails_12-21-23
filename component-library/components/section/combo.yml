@@ -4,7 +4,7 @@ spec:
     - content_blocks
   label: Combo Section
   description: Combo Section
-  icon: "cottage"
+  icon: 'i-mdi-checkbox-multiple-blank-outline'
 
 # Defines the structure of this component, as well as the default values
 blueprint:

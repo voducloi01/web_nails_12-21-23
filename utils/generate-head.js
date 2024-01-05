@@ -4,7 +4,9 @@ export default function (pageData, route) {
   const seo = pageData.seo || {};
   const pageDescription = seo.page_description || siteData.description;
 
-  const canonicalUrl = siteData.BaseURL + (`/${(seo.canonical_url || route.href)}`.replace(/\/+/g, '/'));
+  const canonicalUrl =
+    siteData.BaseURL +
+    `/${seo.canonical_url || route.href}`.replace(/\/+/g, '/');
 
   const metaData = [
     {
@@ -47,27 +49,36 @@ export default function (pageData, route) {
       name: 'twitter:site',
       content: siteData.twitter_site
     }
-  ]
+  ];
 
   // Add robots no index
   if (seo.no_index) {
-    metaData.push({
-      name: 'robots',
-      content: 'noindex'
-    },
-    {
-      name: 'googlebot',
-      content: 'noindex'
-    });
+    metaData.push(
+      {
+        name: 'robots',
+        content: 'noindex'
+      },
+      {
+        name: 'googlebot',
+        content: 'noindex'
+      }
+    );
   }
 
   return {
     title: `${pageData.title} | ${siteData.site_title}`,
     meta: metaData,
-    link: [{
-      hid: 'canonical',
-      rel: 'canonical',
-      href: canonicalUrl
-    }]
-  }
+    link: [
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: canonicalUrl
+      },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: siteData.favicon_icon
+      }
+    ]
+  };
 }
