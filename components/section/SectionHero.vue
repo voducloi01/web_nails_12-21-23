@@ -1,18 +1,13 @@
-<!-- eslint-disable vue/no-v-html -->
-<!-- eslint-disable vue/html-self-closing -->
 <template>
   <section
     :id="block.id"
     :data-cms-binding="dataBinding"
-    class="backdrop-blur-[7.5px] overflow-hidden"
+    class="backdrop-blur-[7.5px] overflow-hidden z-30"
   >
-    <div class="container pb-[94px]">
-      <div
-        class="grid items-center grid-cols-2 gap-[5px] sm:gap-[15px] md:gap-[40px] lg:gap-[90px]"
-      >
+      <div class="container w-full py-20">
         <!-- title and content -->
         <div
-          class="flex flex-col gap-[5px] sm:gap-[15px] lg:gap-[23px] justify-center items-start pr-[30px]"
+          class="sm:w-1/2 w-full flex flex-col gap-[5px] sm:gap-[15px] lg:gap-[23px] justify-center items-start pr-[30px]"
         >
           <h2
             class="text-[24px] sm:text-[35px] md:text-[50px] lg:text-[76px] font-sfPro_bold"
@@ -36,7 +31,7 @@
               <img class="image" :src="block.icon_menu_board" />
             </div>
           </div>
-          <!-- panigate -->
+          <!-- pagination -->
           <div class="sm:flex hidden gap-[24px] items-center justify-center">
             <!-- icon left -->
             <div
@@ -54,54 +49,75 @@
             </div>
           </div>
         </div>
-        <!-- banner -->
-        <swiper
-          class="w-full wrapper_swiper"
-          space-between="30"
-          @swiper="onSwiper"
-        >
-          <swiper-slide
+      </div>
+      <div class="w-full h-full overflow-hidden custom_slider">
+        <div class="sm:block hidden absolute z-50 top-0 right-0 py-10">
+          <div
             v-for="(data, idx) in block.item_banner"
             :key="idx"
-            class="wrapper_swiper_item"
+            :class="{ active: idx === currentIndex }"
+            class="hidden relative"
           >
-            <img src="/images/banner_hero.png" class="image" />
-          </swiper-slide>
-        </swiper>
+            <img
+              class="object-cover lg:w-[665px] lg:h-[665px] w-[400px] h-[400px]"
+              :src="data.image_banner"
+            />
+          </div>
+        </div>
       </div>
-    </div>
   </section>
 </template>
+
 <script lang="ts" setup>
+import { ref } from 'vue';
+
 interface Props {
   dataBinding: any;
   block: any;
 }
 
-defineProps<Props>();
-const swiperInstance = ref();
-
-const onSwiper = (e: any) => {
-  swiperInstance.value = e;
-};
+const { dataBinding, block } = defineProps<Props>();
+const currentIndex = ref(0);
+const imgSlider = block.item_banner;
 
 const handleNext = () => {
-  swiperInstance.value.slideNext();
+  currentIndex.value = (currentIndex.value + 1) % imgSlider.length;
 };
 
 const handlePrev = () => {
-  swiperInstance.value.slidePrev();
+  currentIndex.value = (currentIndex.value - 1 + imgSlider.length) % imgSlider.length;
 };
+
 </script>
 
+
 <style lang="scss" scoped>
-.wrapper_swiper {
-  width: calc(100% + 70px);
-  &:hover {
-    cursor: pointer;
+.custom_slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  img {
+    transition: transform 0.3s ease-in-out;
   }
 }
-.wrapper_swiper ::v-deep(.wrapper_swiper_item) {
-  aspect-ratio: 1/1;
+.custom_slider .active {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  animation: turnImg 1.5s ease-in-out 1 forwards;
 }
+
+@keyframes turnImg {
+  0% {
+    transform: translate(100%, -100%) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-135deg);
+  }
+}
+
 </style>
