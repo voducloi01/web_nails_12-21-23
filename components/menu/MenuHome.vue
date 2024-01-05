@@ -37,6 +37,7 @@
             }"
             class="swiper__wrapper__title"
           >
+
             <swiper-slide
               v-for="(data, idx) in block.menu_items"
               :key="idx"
@@ -387,14 +388,13 @@ const onSwiper = (e: any) => {
     width: auto !important;
   }
 }
-
 .swiper__wrapper .swiper__wrapper__title :deep(.swiper-slide) {
   display: flex;
   align-items: center;
 }
 
 .swiper__wrapper__title__item {
-  background-position: 0 0; /* Start from the left */
+  background-position: 0 0;
   transition: background 0.3s ease-in-out;
 }
 .active_item {

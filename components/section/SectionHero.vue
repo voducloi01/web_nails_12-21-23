@@ -7,7 +7,7 @@
       <div class="container w-full py-20">
         <!-- title and content -->
         <div
-          class="sm:w-1/2 w-full flex flex-col gap-[5px] sm:gap-[15px] lg:gap-[23px] justify-center items-start pr-[30px]"
+          class="w-1/2 flex flex-col gap-[5px] sm:gap-[15px] lg:gap-[23px] justify-center items-start pr-[30px]"
         >
           <h2
             class="text-[24px] sm:text-[35px] md:text-[50px] lg:text-[76px] font-sfPro_bold"
@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="w-full h-full overflow-hidden custom_slider">
-        <div class="sm:block hidden absolute z-50 top-0 right-0 py-10">
+        <div class="overflow-hidden absolute z-50 top-0 lg:right-0 py-10 md:right-[-10%] right-[-20%]">
           <div
             v-for="(data, idx) in block.item_banner"
             :key="idx"
@@ -59,7 +59,7 @@
             class="hidden relative"
           >
             <img
-              class="object-cover lg:w-[665px] lg:h-[665px] w-[400px] h-[400px]"
+              class="rounded-full object-cover lg:w-[665px] lg:h-[665px] md:w-[500px] md:h-[500px] w-[350px] h-[350px] aspect-square"
               :src="data.image_banner"
             />
           </div>
@@ -95,9 +95,8 @@ const handlePrev = () => {
 .custom_slider {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  align-items: start;
+  justify-content: start;
   img {
     transition: transform 0.3s ease-in-out;
   }
