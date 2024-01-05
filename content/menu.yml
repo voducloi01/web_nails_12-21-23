@@ -1,4 +1,16 @@
 title: Menu
+permalink: 
+seo:
+  page_description: >-
+    We believe that a good email marketing strategy is the key to growth. So
+    we’re helping you grow your business with tools and resources that make
+    email marketing easy.
+  canonical_url:
+  featured_image:
+  featured_image_alt:
+  author_twitter_handle:
+  open_graph_type:
+  no_index: false
 content_blocks:
   - _block_name: menu/home
     id: home
@@ -25,7 +37,7 @@ content_blocks:
             sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
             new_price: 29$
             old_price: 39$
-      - title_item: Spaghetti
+      - title_item: Burger
         banner_item:
           - img_item: /images/img_food.png
             img_alt_item: Food

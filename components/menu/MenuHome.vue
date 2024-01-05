@@ -20,43 +20,31 @@
         </p>
       </div>
       <div class="swiper__wrapper">
-        <div class="flex justify-center">
-          <swiper
-            :slides-per-view="'auto'"
-            space-between="20"
-            :breakpoints="{
-              '640': {
-                spaceBetween: 20,
-              },
-              '768': {
-                spaceBetween: 40,
-              },
-              '1024': {
-                spaceBetween: 60,
-              },
-            }"
-            class="swiper__wrapper__title"
+        <div class="swiper__wrapper__title">
+          <div
+            v-for="(data, idx) in block.menu_items"
+            :key="idx"
+            :class="[
+              swiperInstance?.activeIndex === idx
+                ? 'active_item  swiper__wrapper__title__item '
+                : 'swiper__wrapper__title__item',
+            ]"
+            class="rounded-full"
           >
-            <swiper-slide
-              v-for="(data, idx) in block.menu_items"
-              :key="idx"
-              :class="[
-                swiperInstance?.activeIndex === idx
-                  ? ' px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] active_item  swiper__wrapper__title__item '
-                  : ' swiper__wrapper__title__item',
-              ]"
-              class="rounded-full lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold"
+            <div
+              class="z-30 px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold"
               @click="swiperInstance?.slideTo(idx)"
-            >
+              >
               {{ data.title_item }}
-            </swiper-slide>
-          </swiper>
+            </div>
+          </div>
         </div>
       </div>
       <!-- grid desktop -->
       <swiper
         class="w-full swiper_wrap_item"
         space-between="20"
+        :speed="1200"
         :slides-per-view="'auto'"
         @swiper="onSwiper"
       >
@@ -162,6 +150,7 @@
               class="swiper_mobile"
               :slides-per-view="'auto'"
               :space-between="16"
+              :speed="1200"
             >
               <swiper-slide
                 v-for="(item, key) in items.banner_item"
@@ -308,7 +297,6 @@ interface Props {
   block: any;
 }
 const props = defineProps<Props>();
-
 const swiperInstance = ref();
 
 const products = computed(() => props.block.menu_items);
@@ -380,22 +368,34 @@ const onSwiper = (e: any) => {
 .swiper__wrapper {
   padding-top: 30px;
 }
-
-.swiper__wrapper__title {
-  &__item {
-    width: auto !important;
-  }
-}
-.swiper__wrapper .swiper__wrapper__title :deep(.swiper-slide) {
+.swiper__wrapper__title{
   display: flex;
-  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
 }
-
+.swiper__wrapper__title__item {
+  background-position: 0 0;
+  transition: background 0.3s ease-in-out;
+}
 .active_item {
-  background-color: #000;
+  background: #000;
+  background-size: 100% 100%;
   color: #fff;
+  transition-delay: 0.1s;
+  animation: moveBackground 1s ease-in-out forwards;
   &:hover {
     cursor: pointer;
   }
 }
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(-35%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
 </style>
