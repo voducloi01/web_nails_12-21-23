@@ -19,27 +19,25 @@
           {{ block.sub_title }}
         </p>
       </div>
-      <div class="swiper__wrapper">
-        <div class="swiper__wrapper__title">
+      <div class="pt-6">
+        <div class="swiper__wrapper__title relative overflow-hidden">
           <div
             v-for="(data, idx) in block.menu_items"
             :key="idx"
-            :class="[
-              swiperInstance?.activeIndex === idx
-                ? 'active_item  swiper__wrapper__title__item '
-                : 'swiper__wrapper__title__item',
-            ]"
-            class="rounded-full"
+            :class="{ active_item: swiperInstance?.activeIndex === idx }"
+            @click="swiperInstance?.slideTo(idx)"
+            class="text-center lg:w-[200px] w-[150px] lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold z-30 py-2"
           >
-            <div
-              class="z-30 px-[14px] py-[8px] sm:px-[70px] sm:py-[12px] lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold"
-              @click="swiperInstance?.slideTo(idx)"
-              >
-              {{ data.title_item }}
-            </div>
+            {{ data.title_item }}
           </div>
+          <div
+            class="absolute lg:w-[200px] lg:h-[50px] w-[150px] h-[40px] bg-black rounded-full"
+            :class="{ active_bg: isActiveIndex(swiperInstance?.activeIndex) }"
+            :style="getBgBlack(swiperInstance?.activeIndex)"
+          ></div>
         </div>
       </div>
+
       <!-- grid desktop -->
       <swiper
         class="w-full swiper_wrap_item"
@@ -296,17 +294,45 @@ interface Props {
   dataBinding: any;
   block: any;
 }
-const props = defineProps<Props>();
-const swiperInstance = ref();
+const { dataBinding, block } = defineProps<Props>();
+const swiperInstance = ref<Swiper | undefined>();
 
-const products = computed(() => props.block.menu_items);
+const isActiveIndex = (index: number) => {
+  return swiperInstance.value?.activeIndex === index;
+};
+
+const getBgBlack = (index: number) => {
+  const containerElement =
+    typeof document !== 'undefined' ? document.getElementById(block.id) : null;
+  if (containerElement) {
+    let itemWidth;
+    if (window.innerWidth >= 768) {
+      itemWidth = 200;
+    } else {
+      itemWidth = 150;
+    }
+    const scrollPosition = index * itemWidth;
+    containerElement.scrollTo({
+      top: 0,
+      left: scrollPosition,
+      behavior: 'smooth',
+    });
+
+    return {
+      width: itemWidth + 'px',
+      left: index * itemWidth + 'px',
+    };
+  }
+};
+
+const products = computed(() => block.menu_items);
 
 const productMapped = products.value.map((product: any) => {
   product.banner_item = product.banner_item.map((item: any) => {
     return {
       ...item,
       quantity: 0,
-      activeCart: false
+      activeCart: false,
     };
   });
   return product;
@@ -365,37 +391,21 @@ const onSwiper = (e: any) => {
     padding-top: 60px;
   }
 }
-.swiper__wrapper {
-  padding-top: 30px;
-}
-.swiper__wrapper__title{
+.swiper__wrapper__title {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-}
-.swiper__wrapper__title__item {
-  background-position: 0 0;
-  transition: background 0.3s ease-in-out;
+  position: relative;
 }
 .active_item {
-  background: #000;
-  background-size: 100% 100%;
   color: #fff;
-  transition-delay: 0.1s;
-  animation: moveBackground 1s ease-in-out forwards;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.active_bg {
+  transition: all 0.6s ease-in-out;
+
   &:hover {
     cursor: pointer;
   }
 }
-
-@keyframes moveBackground {
-  0% {
-    transform: translate(-35%, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
-
 </style>
