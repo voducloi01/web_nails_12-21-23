@@ -21,20 +21,27 @@
       </div>
       <div class="pt-6">
         <div class="swiper__wrapper__title relative overflow-hidden">
-          <div
+          <!-- <div
             v-for="(data, idx) in block.menu_items"
             :key="idx"
             :class="{ active_item: swiperInstance?.activeIndex === idx }"
             @click="swiperInstance?.slideTo(idx)"
-            class="text-center lg:w-[200px] w-[150px] lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold z-30 py-2"
-          >
-            {{ data.title_item }}
-          </div>
-          <div
+            class="text-center lg:w-[200px] w-[150px] lg:text-xl md:text-md sm:text-sm text-[14px] hover:cursor-pointer font-sfPro_semibold py-2"
+          > -->
+          <!-- <p class="pointer-events-none">
+              {{ data.title_item }}
+            </p> -->
+          <menu-switch-radio :items="block.menu_items" v-model="active" />
+          <!-- </div> -->
+          <!-- <div
             class="absolute lg:w-[200px] lg:h-[50px] w-[150px] h-[40px] bg-black rounded-full"
             :class="{ active_bg: isActiveIndex(swiperInstance?.activeIndex) }"
             :style="getBgBlack(swiperInstance?.activeIndex)"
-          ></div>
+          >
+            <p class="pointer-events-none">
+              {{ labelActive }}
+            </p>
+          </div> -->
         </div>
       </div>
 
@@ -296,34 +303,23 @@ interface Props {
 }
 const { dataBinding, block } = defineProps<Props>();
 const swiperInstance = ref<Swiper | undefined>();
+console.log(block, 'ppppp');
+
+const labelActive = ref('');
 
 const isActiveIndex = (index: number) => {
   return swiperInstance.value?.activeIndex === index;
 };
 
-const getBgBlack = (index: number) => {
-  const containerElement =
-    typeof document !== 'undefined' ? document.getElementById(block.id) : null;
-  if (containerElement) {
-    let itemWidth;
-    if (window.innerWidth >= 768) {
-      itemWidth = 200;
-    } else {
-      itemWidth = 150;
-    }
-    const scrollPosition = index * itemWidth;
-    containerElement.scrollTo({
-      top: 0,
-      left: scrollPosition,
-      behavior: 'smooth',
-    });
+const active = ref(0);
 
-    return {
-      width: itemWidth + 'px',
-      left: index * itemWidth + 'px',
-    };
-  }
-};
+const getBgBlack = computed(() => {
+  let result = '';
+  if (selectedWidth.value) result = result + `width: ${selectedWidth.value}; `;
+  if (selectedLeft.value)
+    result = result + `transform: ${selectedLeft.value}; `;
+  return result;
+});
 
 const products = computed(() => block.menu_items);
 
@@ -394,6 +390,7 @@ const onSwiper = (e: any) => {
 .swiper__wrapper__title {
   display: flex;
   position: relative;
+  justify-content: center;
 }
 .active_item {
   color: #fff;
@@ -403,7 +400,6 @@ const onSwiper = (e: any) => {
 
 .active_bg {
   transition: all 0.6s ease-in-out;
-
   &:hover {
     cursor: pointer;
   }

@@ -37,6 +37,26 @@ content_blocks:
             sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
             new_price: 29$
             old_price: 39$
+      - title_item: Spaghetti
+        banner_item:
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            new_price: 29$
+            old_price: 39$
+          - img_item: /images/img_food.png
+            img_alt_item: Food
+            background_item: '#ffffff4d'
+            evaluate: 5
+            icon_star: /images/star.svg
+            title_item: Black pepper spaghetti
+            sub_title_item: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet molestie eros, a molestie neque.
+            new_price: 29$
+            old_price: 39$
       - title_item: Burger
         banner_item:
           - img_item: /images/img_food.png
